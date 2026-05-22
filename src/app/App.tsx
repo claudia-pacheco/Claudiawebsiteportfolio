@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Code2, Palette, Database, Sparkles, Mail, Github, Linkedin, ArrowUpRight, Briefcase, ExternalLink } from "lucide-react";
+import { Code2, Palette, Database, Sparkles, Mail, Github, Linkedin, ArrowUpRight, Briefcase, ExternalLink, Sun, Moon } from "lucide-react";
 
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 
@@ -131,24 +131,71 @@ const SKILLS = [
 ];
 
 export default function App() {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+    return false;
+  });
 
   useEffect(() => {
-    const move = (e: MouseEvent) => setCursorPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
 
-      {/* Cursor glow */}
+      {/* ── Loading screen ──────────────────────────────────────────── */}
       <motion.div
-        className="fixed pointer-events-none z-0 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(212,165,165,0.45) 0%, transparent 70%)" }}
-        animate={{ left: cursorPos.x - 300, top: cursorPos.y - 300 }}
-        transition={{ type: "spring", damping: 30, stiffness: 200 }}
-      />
+        initial={{ opacity: 1 }}
+        animate={{ opacity: loading ? 1 : 0, pointerEvents: loading ? "auto" : "none" }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center gap-10"
+      >
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-[family-name:var(--font-display)] font-light italic text-5xl tracking-wide"
+        >
+          Claudia Pacheco
+        </motion.p>
+
+        {/* Animated line */}
+        <div className="relative w-48 h-px bg-border overflow-hidden">
+          <motion.div
+            className="absolute inset-y-0 left-0 bg-primary"
+            initial={{ width: "0%" }}
+            animate={{ width: loading ? "100%" : "100%" }}
+            transition={{ duration: 1.6, ease: "easeInOut", delay: 0.2 }}
+          />
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="font-[family-name:var(--font-body)] text-xs tracking-[0.2em] uppercase text-muted-foreground"
+        >
+          Portfolio
+        </motion.p>
+      </motion.div>
+
 
       {/* ── Nav ─────────────────────────────────────────────────────── */}
       <motion.nav
@@ -164,7 +211,7 @@ export default function App() {
             transition={{ delay: 0.2 }}
             className="font-[family-name:var(--font-display)] text-2xl font-light italic"
           >
-            Claudia Pacheco
+            Claudia Pacheco 
           </motion.div>
           <div className="hidden md:flex items-center gap-8">
             {["Experience", "Work", "About", "Contact"].map((item, i) => (
@@ -174,7 +221,7 @@ export default function App() {
                 initial={{ opacity: 0, y: -16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.08 }}
-                className="font-[family-name:var(--font-body)] text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors relative group"
+                className="font-[family-name:var(--font-display)] text-lg font-normal tracking-wide text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item}
                 <motion.span
@@ -185,6 +232,27 @@ export default function App() {
                 />
               </motion.a>
             ))}
+            <motion.button
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.62 }}
+              onClick={() => setDarkMode(!darkMode)}
+              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
+                darkMode
+                  ? "bg-[#f2ecf7] text-[#17121e] hover:bg-white"
+                  : "bg-[#17121e] text-[#f2ecf7] hover:bg-[#2a2237]"
+              }`}
+              aria-label="Toggle dark mode"
+            >
+              <motion.div
+                key={darkMode ? "sun" : "moon"}
+                initial={{ rotate: -30, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                transition={{ duration: 0.25 }}
+              >
+                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </motion.div>
+            </motion.button>
           </div>
         </div>
       </motion.nav>
@@ -207,7 +275,7 @@ export default function App() {
               <em className="text-primary">Experiences</em>
             </h1>
 
-            <p className="font-[family-name:var(--font-body)] text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
               Blending creativity with code to build beautiful, functional, and user-centered web applications.
             </p>
 
@@ -736,21 +804,10 @@ export default function App() {
       </section>
 
       {/* ── Footer ──────────────────────────────────────────────────── */}
-      <footer className="border-t border-border py-10 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="border-t border-border py-10 px-6 lg:px-16 xl:px-24">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-[family-name:var(--font-display)] text-xl font-light italic">Claudia Pacheco</p>
           <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground">© 2025 All rights reserved</p>
-          <div className="flex items-center gap-6">
-            {["Privacy", "Terms"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="font-[family-name:var(--font-body)] text-xs text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                {link}
-              </a>
-            ))}
-          </div>
         </div>
       </footer>
     </div>
