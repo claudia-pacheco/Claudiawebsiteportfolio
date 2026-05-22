@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Code2, Palette, Database, Sparkles, Mail, Github, Linkedin, ArrowUpRight, Briefcase, ExternalLink, Sun, Moon } from "lucide-react";
+import { Code2, Palette, Database, Sparkles, Mail, Github, Linkedin, ArrowUpRight, Briefcase, ExternalLink, Sun, Moon, ArrowUp } from "lucide-react";
 
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 
@@ -20,39 +20,40 @@ const STACK = [
     category: "Frameworks & Libraries",
     items: [
       { name: "React", icon: `${DI}/react/react-original.svg` },
-      { name: "Next.js", icon: `${DI}/nextjs/nextjs-original.svg` },
-      { name: "Vue.js", icon: `${DI}/vuejs/vuejs-original.svg` },
       { name: "Node.js", icon: `${DI}/nodejs/nodejs-original.svg` },
       { name: "Express", icon: `${DI}/express/express-original.svg` },
-      { name: "FastAPI", icon: `${DI}/fastapi/fastapi-original.svg` },
-      { name: "Tailwind CSS", icon: `${DI}/tailwindcss/tailwindcss-original.svg` },
-      { name: "Framer Motion", icon: `${DI}/framermotion/framermotion-original.svg` },
+      { name: "Django", icon: `${DI}/django/django-plain.svg` },
+      { name: "Material UI", icon: `${DI}/materialui/materialui-original.svg` },
     ],
   },
   {
     category: "Databases & Cloud",
     items: [
       { name: "PostgreSQL", icon: `${DI}/postgresql/postgresql-original.svg` },
-      { name: "MySQL", icon: `${DI}/mysql/mysql-original.svg` },
       { name: "MongoDB", icon: `${DI}/mongodb/mongodb-original.svg` },
-      { name: "Redis", icon: `${DI}/redis/redis-original.svg` },
-      { name: "Supabase", icon: `${DI}/supabase/supabase-original.svg` },
-      { name: "Firebase", icon: `${DI}/firebase/firebase-original.svg` },
       { name: "AWS", icon: `${DI}/amazonwebservices/amazonwebservices-plain-wordmark.svg` },
-      { name: "Vercel", icon: `${DI}/vercel/vercel-original.svg` },
+      { name: "Heroku", icon: `${DI}/heroku/heroku-original.svg` },
     ],
   },
   {
     category: "Tools & Workflow",
     items: [
-      { name: "Git", icon: `${DI}/git/git-original.svg` },
-      { name: "GitHub Actions", icon: `${DI}/githubactions/githubactions-original.svg` },
-      { name: "Docker", icon: `${DI}/docker/docker-original.svg` },
-      { name: "Figma", icon: `${DI}/figma/figma-original.svg` },
-      { name: "Postman", icon: `${DI}/postman/postman-original.svg` },
+      { name: "GitHub", icon: `${DI}/github/github-original.svg` },
       { name: "VS Code", icon: `${DI}/vscode/vscode-original.svg` },
+      { name: "Figma", icon: `${DI}/figma/figma-original.svg` },
       { name: "Jira", icon: `${DI}/jira/jira-original.svg` },
-      { name: "Storybook", icon: `${DI}/storybook/storybook-original.svg` },
+      { name: "Postman", icon: `${DI}/postman/postman-original.svg` },
+      { name: "Jest", icon: `${DI}/jest/jest-plain.svg` },
+      { name: "Trello", icon: `${DI}/trello/trello-original.svg` },
+      { name: "Slack", icon: `${DI}/slack/slack-original.svg` },
+    ],
+  },
+  {
+    category: "Testing & Debugging",
+    items: [
+      { name: "BrowserStack", icon: `${DI}/browserstack/browserstack-original.svg` },
+      { name: "Insomnia", icon: `${DI}/insomnia/insomnia-original.svg` },
+      { name: "Telerik Fiddler", icon: "https://www.telerik.com/favicon.ico" },
     ],
   },
 ];
@@ -60,43 +61,51 @@ const STACK = [
 const PROJECTS = [
   {
     id: "01",
-    title: "Bloom Commerce",
-    category: "Full-Stack · E-Commerce",
-    desc: "End-to-end multi-vendor marketplace with real-time inventory, Stripe subscriptions, and a headless storefront serving 12,000+ monthly orders.",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Redis"],
-    year: "2025",
-    url: "bloomcommerce.co",
-    image: "https://images.unsplash.com/photo-1539278383962-a7774385fa02?w=900&h=560&fit=crop&auto=format",
+    title: "Flying Harry Potter",
+    category: "Solo · Vanilla JS Game",
+    desc: "A canvas-based browser game built with Vanilla JavaScript, HTML, and CSS. Players dodge obstacles and collect trophies to score points — my first solo project, completed in 2 weeks.",
+    tags: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
+    year: "Jan 2022",
+    url: "flying-harry-potter.netlify.app",
+    live: "https://flying-harry-potter.netlify.app/",
+    github: "https://github.com/claudia-pacheco/Project-1",
+    image: "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=900&h=560&fit=crop&auto=format",
   },
   {
     id: "02",
-    title: "Studio CMS",
-    category: "Web Application · SaaS",
-    desc: "Headless content management system for creative agencies with live preview, content branching, and granular role-based access control.",
-    tags: ["React", "Sanity", "TypeScript", "Vercel"],
-    year: "2024",
-    url: "studiocms.io",
-    image: "https://images.unsplash.com/photo-1668608321326-5e49742591ad?w=900&h=560&fit=crop&auto=format",
+    title: "Dungeons & Dragons Character Builder",
+    category: "Pair · Reactathon",
+    desc: "A Reactathon project built in 1 week with a partner, consuming a public API to generate random D&D characters. Styled with plain CSS.",
+    tags: ["React", "REST API", "CSS3"],
+    year: "Feb 2022",
+    url: "dungeons-n-dragons.netlify.app",
+    live: "https://dungeons-n-dragons.netlify.app/",
+    github: "https://github.com/claudia-pacheco/project-2",
+    image: "https://images.unsplash.com/photo-1549056572-75914d5d5fd4?w=900&h=560&fit=crop&auto=format",
   },
   {
     id: "03",
-    title: "Pulse Analytics",
-    category: "Dashboard · Data Viz",
-    desc: "Real-time analytics platform for D2C brands — WebSocket-driven feeds, custom chart builders, and scheduled export pipelines.",
-    tags: ["React", "D3.js", "WebSocket", "Express"],
-    year: "2024",
-    url: "pulsehq.app",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=560&fit=crop&auto=format",
+    title: "Walkies",
+    category: "Pair · Full Stack MERN",
+    desc: "A full stack MERN app built with a partner over 2 weeks, consuming its own RESTful API. React, HTML, and CSS on the frontend; MongoDB, Node.js, and Express on the backend.",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    year: "Mar 2022",
+    url: "walkiessei22.netlify.app",
+    live: "https://walkiessei22.netlify.app/",
+    github: "https://github.com/claudia-pacheco/walkies-client",
+    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&h=560&fit=crop&auto=format",
   },
   {
     id: "04",
-    title: "Aria AI",
-    category: "AI Application · ML Ops",
-    desc: "Intelligent long-form content generator powered by Claude, with fine-tuned tone presets, multi-model routing, and usage-based billing.",
-    tags: ["Python", "FastAPI", "OpenAI", "React"],
-    year: "2023",
-    url: "aria.ai",
-    image: "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=900&h=560&fit=crop&auto=format",
+    title: "Cloud9 Scents",
+    category: "Solo · Full Stack",
+    desc: "A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and Material UI for the frontend.",
+    tags: ["React", "Python", "Django", "PostgreSQL", "Material UI"],
+    year: "May 2022",
+    url: "cloud9-scents.netlify.app",
+    live: "https://cloud9-scents.netlify.app/",
+    github: "https://github.com/claudia-pacheco/perfumes-frontend",
+    image: "https://images.unsplash.com/photo-1595425959632-34f2822322ce?w=900&h=560&fit=crop&auto=format",
   },
 ];
 
@@ -124,14 +133,15 @@ function BrowserMockup({ src, alt, url }: { src: string; alt: string; url: strin
 }
 
 const SKILLS = [
-  { icon: Code2, name: "Frontend Development", desc: "React, Vue, TypeScript" },
-  { icon: Database, name: "Backend & APIs", desc: "Node.js, Python, PostgreSQL" },
-  { icon: Palette, name: "UI/UX Design", desc: "Figma, Responsive Design" },
+  { icon: Code2, name: "Frontend Development", desc: "React, JavaScript, TypeScript, CSS" },
+  { icon: Database, name: "Backend & APIs", desc: "Node.js, Express, Python, Django" },
+  { icon: Palette, name: "Databases & Cloud", desc: "PostgreSQL, MongoDB, AWS" },
   { icon: Sparkles, name: "Creative Solutions", desc: "Innovation & Problem Solving" },
 ];
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") === "dark" ||
@@ -143,6 +153,12 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -214,16 +230,21 @@ export default function App() {
             Claudia Pacheco 
           </motion.div>
           <div className="hidden md:flex items-center gap-8">
-            {["Experience", "Work", "About", "Contact"].map((item, i) => (
+            {[
+              { label: "Work", href: "#experience" },
+              { label: "Tools", href: "#stack" },
+              { label: "About", href: "#about" },
+              { label: "Contact", href: "#contact" },
+            ].map((item, i) => (
               <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 initial={{ opacity: 0, y: -16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.08 }}
                 className="font-[family-name:var(--font-display)] text-lg font-normal tracking-wide text-muted-foreground hover:text-foreground transition-colors relative group"
               >
-                {item}
+                {item.label}
                 <motion.span
                   className="absolute -bottom-1 left-0 h-px bg-primary"
                   initial={{ width: 0 }}
@@ -276,7 +297,7 @@ export default function App() {
             </h1>
 
             <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Blending creativity with code to build beautiful, functional, and user-centered web applications.
+              Full Stack Developer based in London, blending creativity with code to build beautiful, functional, and user-centered web applications.
             </p>
 
             <motion.div
@@ -286,7 +307,7 @@ export default function App() {
               className="flex items-center justify-center gap-4 pt-4"
             >
               <motion.a
-                href="#work"
+                href="#experience"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide hover:shadow-lg transition-shadow"
@@ -369,15 +390,15 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
-                title: "Vibe Coding & AI-Assisted Development",
-                desc: "Exploring how to integrate AI tools — LLMs, code generation, and agentic workflows — directly into the development process to build faster and smarter.",
+                title: "TypeScript",
+                desc: "Working through types, interfaces, and generics to write more robust, self-documenting code — and gradually applying it to existing projects.",
                 label: "Learning",
                 icon: "✦",
               },
               {
-                title: "Getting Acquainted with TypeScript",
-                desc: "Starting from the fundamentals — types, interfaces, and type inference — and building up to more complex concepts to level up the quality of my code.",
-                label: "Learning",
+                title: "AI-Assisted Development",
+                desc: "Exploring how to integrate AI tooling into day-to-day workflows — from code generation to agentic pipelines — to ship faster without sacrificing quality.",
+                label: "Exploring",
                 icon: "◈",
               },
             ].map((item, i) => (
@@ -448,26 +469,21 @@ export default function App() {
 
                 <div>
                   <h3 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-light mb-1">
-                    Web Developer <span className="text-muted-foreground font-light">·</span> <em>Front-End</em>
+                    Web Developer
                   </h3>
                   <p className="font-[family-name:var(--font-display)] text-xl text-muted-foreground font-light">
-                    FinTech Solutions Inc.
+                    InvestCloud Inc.
                   </p>
                 </div>
 
-                <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                  Building and maintaining consumer-facing web applications for a rapidly growing fintech platform.
-                  Led frontend development for the core dashboard, transaction history, and onboarding flows —
-                  serving over 200,000 active users across web and mobile web.
-                </p>
-
                 <ul className="space-y-3">
                   {[
-                    "Developed responsive React interfaces for the customer-facing dashboard and payment flows",
-                    "Integrated third-party payment APIs and real-time transaction streaming via WebSockets",
-                    "Improved Lighthouse performance score from 62 to 94 through code splitting and asset optimization",
-                    "Collaborated with design and product teams to ship two major product redesigns on schedule",
-                    "Established a component library in Figma and Storybook adopted across three product teams",
+                    "Delivered end-to-end functionality by engineering web application features on top of an internal platform, utilising front-end components, configuration, and backend integrations.",
+                    "Reduced code duplication and enhanced UI maintainability by controlling application behaviour — navigation, permissions, and validation rules — through metadata and configuration files.",
+                    "Safeguarded system security by designing and implementing role-based access and navigation, ensuring users exclusively viewed and accessed applications appropriate to their roles.",
+                    "Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments with frozen builds for UAT and regression testing.",
+                    "Facilitated seamless production rollouts and hotfixes by contributing to release and deployment processes, including the preparation of detailed deployment notes regarding versions, environments, and browser coverage.",
+                    "Accelerated root-cause analysis by enhancing logging and documentation whilst investigating and resolving production incidents related to UI, configuration, and environment differences.",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -479,7 +495,7 @@ export default function App() {
                 </ul>
 
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {["React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js", "PostgreSQL", "AWS", "Figma"].map((tag) => (
+                  {["HTML", "CSS", "AWS", "Fiddler", "BrowserStack", "Mobile App Dev", "Company Specific Tech"].map((tag) => (
                     <span
                       key={tag}
                       className="font-[family-name:var(--font-body)] text-xs bg-secondary/70 rounded-full px-3 py-1"
@@ -488,20 +504,45 @@ export default function App() {
                     </span>
                   ))}
                 </div>
+
+                {/* Clients */}
+                <div className="pt-4 border-t border-border">
+                  <p className="font-[family-name:var(--font-body)] text-[0.65rem] tracking-[0.16em] uppercase text-primary mb-3">
+                    Client Projects
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { name: "UBS", region: "UK" },
+                      { name: "HSBC", region: "UK" },
+                      { name: "Capital Group", region: "US" },
+                      { name: "Truist", region: "US" },
+                    ].map((client) => (
+                      <span
+                        key={client.name}
+                        className="inline-flex items-center gap-1.5 font-[family-name:var(--font-body)] text-xs border border-border rounded-full px-3 py-1"
+                      >
+                        {client.name}
+                        <span className="text-muted-foreground/50 text-[0.6rem]">{client.region}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Right — meta */}
               <div className="flex flex-row md:flex-col items-start md:items-end gap-6 md:gap-4 md:text-right">
                 <div>
                   <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/60 tracking-widest uppercase mb-1">Period</p>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-light">2023 – Present</p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-light">June 2023 – May 2026</p>
                 </div>
                 <div>
                   <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/60 tracking-widest uppercase mb-1">Location</p>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-light">Remote</p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-light">London, UK</p>
                 </div>
                 <motion.a
-                  href="#"
+                  href="https://www.investcloud.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ rotate: 45 }}
                   transition={{ duration: 0.2 }}
                   className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 mt-auto"
@@ -534,17 +575,17 @@ export default function App() {
             {[
               {
                 school: "General Assembly",
-                credential: "Software Engineering Bootcamp",
-                detail: "Intensive full-stack program covering React, Node.js, databases, and modern development workflows.",
-                year: "2022",
-                icon: "generalassembly",
+                credential: "Software Engineering Immersive Flex",
+                detail: "Intensive full-stack programme covering React, Node.js, databases, and modern development workflows.",
+                year: "2021 – 2022",
+                icon: "G",
               },
               {
                 school: "University of Hertfordshire",
-                credential: "Certificate of Higher Education",
+                credential: "CertHE in Computer Science",
                 detail: "Computer Science — fundamentals of programming, algorithms, data structures, and systems design.",
                 year: "2021",
-                icon: "academia",
+                icon: "U",
               },
             ].map((edu, i) => (
               <motion.div
@@ -563,7 +604,6 @@ export default function App() {
                 <div className="min-w-0">
                   <div className="flex items-center justify-between gap-3 mb-1">
                     <p className="font-[family-name:var(--font-display)] text-lg font-light">{edu.school}</p>
-                    <span className="font-[family-name:var(--font-body)] text-xs text-muted-foreground flex-shrink-0">{edu.year}</span>
                   </div>
                   <p className="font-[family-name:var(--font-body)] text-xs text-primary tracking-wide mb-2">{edu.credential}</p>
                   <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground leading-relaxed">{edu.detail}</p>
@@ -575,7 +615,7 @@ export default function App() {
       </section>
 
       {/* ── Tech Stack ──────────────────────────────────────────────── */}
-      <section className="py-32 px-6 lg:px-12 bg-secondary/30">
+      <section id="stack" className="py-32 px-6 lg:px-12 bg-secondary/30">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -640,7 +680,7 @@ export default function App() {
               Bootcamp<br /><em>Projects</em>
             </h2>
             <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground max-w-xs md:text-right leading-relaxed">
-              Purposeful products built with care — from greenfield MVPs to scaled platforms.
+              Four projects across 24 weeks — from solo games to full stack apps, each one pushing what I knew further.
             </p>
           </motion.div>
 
@@ -673,7 +713,9 @@ export default function App() {
                       {project.title}
                     </h3>
                     <motion.a
-                      href="#"
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ rotate: 45 }}
                       transition={{ duration: 0.2 }}
                       className="w-9 h-9 rounded-full border border-border flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300 mt-1"
@@ -731,13 +773,13 @@ export default function App() {
 
             <div className="font-[family-name:var(--font-body)] text-base leading-relaxed space-y-5 text-muted-foreground">
               <p>
-                I'm a passionate full-stack developer who believes that great technology should be invisible — seamlessly integrated into beautiful, intuitive experiences that delight users.
+                I'm a Software Engineer with a strong passion for technology — one that started when I first programmed a robot at school and never really switched off.
               </p>
               <p>
-                With expertise spanning frontend frameworks, backend architectures, and database design, I bring a holistic approach to every project. I thrive at the intersection of aesthetics and functionality, where clean code meets thoughtful design.
+                After studying Computer Science at the University of Hertfordshire and completing the Software Engineering Immersive at General Assembly, I moved into the industry as a Full Stack Developer, where I've been building and shipping web applications in financial services ever since.
               </p>
               <p>
-                When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or experimenting with the latest web technologies.
+                Outside of work, you'll find me doing martial arts, travelling, cooking, or disappearing into the mountains on a hike.
               </p>
             </div>
 
@@ -791,7 +833,7 @@ export default function App() {
             </p>
 
             <motion.a
-              href="mailto:hello@claudia.dev"
+              href="mailto:claudia.pacheco.dev@gmail.com"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="mt-6 px-12 py-5 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide hover:shadow-xl transition-all inline-flex items-center gap-3"
@@ -810,6 +852,18 @@ export default function App() {
           <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground">© 2025 All rights reserved</p>
         </div>
       </footer>
+
+      {/* ── Back to top ─────────────────────────────────────────────── */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: scrolled ? 1 : 0, scale: scrolled ? 1 : 0.8, pointerEvents: scrolled ? "auto" : "none" }}
+        transition={{ duration: 0.25 }}
+        className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:shadow-xl hover:scale-110 transition-transform duration-200"
+        aria-label="Back to top"
+      >
+        <ArrowUp className="w-4 h-4" />
+      </motion.button>
     </div>
   );
 }
