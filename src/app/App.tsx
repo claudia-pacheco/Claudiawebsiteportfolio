@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Code2, Palette, Database, Sparkles, Mail, Github, Linkedin, ArrowUpRight, Briefcase, ExternalLink, Sun, Moon, ArrowUp } from "lucide-react";
 
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+const EMAIL = "claudia.pacheco.dev@gmail.com";
 
 const STACK = [
   {
@@ -791,14 +792,15 @@ export default function App() {
               className="pt-12 flex justify-center gap-5"
             >
               {[
-                { Icon: Github, label: "GitHub" },
-                { Icon: Linkedin, label: "LinkedIn" },
-                { Icon: Mail, label: "Email" },
-              ].map(({ Icon, label }) => (
+                { Icon: Github, label: "GitHub", href: "https://github.com/claudia-pacheco", external: true },
+                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/claudia-pacheco1/", external: true },
+                { Icon: Mail, label: "Email", href: `mailto:${EMAIL}`, external: false },
+              ].map(({ Icon, label, href, external }) => (
                 <motion.a
                   key={label}
-                  href="#"
+                  href={href}
                   aria-label={label}
+                  {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-11 h-11 bg-card rounded-full flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all duration-300"
@@ -833,7 +835,7 @@ export default function App() {
             </p>
 
             <motion.a
-              href="mailto:claudia.pacheco.dev@gmail.com"
+              href={`mailto:${EMAIL}`}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="mt-6 px-12 py-5 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide hover:shadow-xl transition-all inline-flex items-center gap-3"
