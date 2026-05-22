@@ -66,7 +66,6 @@ const PROJECTS = [
     category: "Solo · Vanilla JS Game",
     desc: "A canvas-based browser game built with Vanilla JavaScript, HTML, and CSS. Players dodge obstacles and collect trophies to score points — my first solo project, completed in 2 weeks.",
     tags: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
-    year: "Jan 2022",
     url: "flying-harry-potter.netlify.app",
     live: "https://flying-harry-potter.netlify.app/",
     github: "https://github.com/claudia-pacheco/Project-1",
@@ -78,7 +77,6 @@ const PROJECTS = [
     category: "Pair · Reactathon",
     desc: "A Reactathon project built in 1 week with a partner, consuming a public API to generate random D&D characters. Styled with plain CSS.",
     tags: ["React", "REST API", "CSS3"],
-    year: "Feb 2022",
     url: "dungeons-n-dragons.netlify.app",
     live: "https://dungeons-n-dragons.netlify.app/",
     github: "https://github.com/claudia-pacheco/project-2",
@@ -90,7 +88,6 @@ const PROJECTS = [
     category: "Pair · Full Stack MERN",
     desc: "A full stack MERN app built with a partner over 2 weeks, consuming its own RESTful API. React, HTML, and CSS on the frontend; MongoDB, Node.js, and Express on the backend.",
     tags: ["React", "Node.js", "Express", "MongoDB"],
-    year: "Mar 2022",
     url: "walkiessei22.netlify.app",
     live: "https://walkiessei22.netlify.app/",
     github: "https://github.com/claudia-pacheco/walkies-client",
@@ -102,7 +99,6 @@ const PROJECTS = [
     category: "Solo · Full Stack",
     desc: "A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and Material UI for the frontend.",
     tags: ["React", "Python", "Django", "PostgreSQL", "Material UI"],
-    year: "May 2022",
     url: "cloud9-scents.netlify.app",
     live: "https://cloud9-scents.netlify.app/",
     github: "https://github.com/claudia-pacheco/perfumes-frontend",
@@ -738,9 +734,6 @@ export default function App() {
                         {tag}
                       </span>
                     ))}
-                    <span className="font-[family-name:var(--font-body)] text-xs text-muted-foreground ml-auto">
-                      {project.year}
-                    </span>
                   </div>
 
                   {/* Mobile image */}
