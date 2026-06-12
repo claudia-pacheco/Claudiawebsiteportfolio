@@ -298,8 +298,7 @@ export default function App() {
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Full Stack Developer based in London, blending creativity with code to build beautiful, functional, and user-centered web applications.
-            </p>
+Experience in delivering wealth management and financial services platforms used by thousands of users worldwide.            </p>
 
             <motion.div
               initial={{ opacity: 0 }}
