@@ -354,13 +354,14 @@ export default function App() {
 
             <p
               className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "
-              style={{ fontSize: "clamp(2rem, 1vw, 9rem)" }}
+              style={{ fontSize: "clamp(3rem, 1vw, 9rem)" }}
             >
-              I build web applications.
+             I build web applications.
             </p>
 
-            <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Welcome to my coding world! Here you can find more about me and some of the projects I have created.
+            <p className="font-[family-name:var(--font-body)] text-base font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              Hello world. Get to know me and some of the
+              projects I have created.
             </p>
 
             <motion.div
