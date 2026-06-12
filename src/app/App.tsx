@@ -360,7 +360,7 @@ export default function App() {
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Based in London and delivering wealth management and financial
+              Based in London and deliver wealth management and financial
               services platforms used by thousands of users worldwide.
             </p>
 
