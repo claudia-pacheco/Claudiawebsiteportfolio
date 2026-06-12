@@ -358,7 +358,11 @@ export default function App() {
             >
               I build web applications.
             </p>
-            
+
+            <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              Welcome to my coding world! Here you can find more about me and some of the projects I have created.
+            </p>
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
