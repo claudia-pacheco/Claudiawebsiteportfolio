@@ -184,7 +184,7 @@ const SKILLS = [
   {
     icon: Sparkles,
     name: "Creative Solutions",
-    desc: "Innovation & Problem Solving",
+    desc: "AI Innovation & Problem Solving",
   },
 ];
 
@@ -358,11 +358,7 @@ export default function App() {
             >
               I build web applications.
             </p>
-
-            <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Blending creativity with code to build beautiful and functional platforms.
-            </p>
-
+            
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
