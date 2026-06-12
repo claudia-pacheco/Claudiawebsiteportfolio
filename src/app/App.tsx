@@ -205,7 +205,7 @@ export default function App() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="font-[family-name:var(--font-body)] text-xs tracking-[0.2em] uppercase text-muted-foreground"
         >
-          Portfolio
+          Welcome to my portfolio
         </motion.p>
       </motion.div>
 
@@ -288,10 +288,14 @@ export default function App() {
 
             <h1 className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9]"
               style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}>
-              Crafting Digital
+              Hi, I’m 
               <br />
-              <em className="text-primary">Experiences</em>
+              <em className="text-primary">Claudia</em>.
             </h1>
+
+             <p className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "style={{ fontSize: "clamp(2rem, 1vw, 9rem)" }}>
+              I build web applications.
+            </p>
 
             <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
               Full Stack Developer based in London, blending creativity with code to build beautiful, functional, and user-centered web applications.
