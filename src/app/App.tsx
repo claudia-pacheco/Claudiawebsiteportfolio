@@ -1,6 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Code2, Palette, Database, Sparkles, Mail, Github, Linkedin, ArrowUpRight, Briefcase, ExternalLink, Sun, Moon, ArrowUp } from "lucide-react";
+import {
+  Code2,
+  Palette,
+  Database,
+  Sparkles,
+  Mail,
+  Github,
+  Linkedin,
+  ArrowUpRight,
+  Briefcase,
+  ExternalLink,
+  Sun,
+  Moon,
+  ArrowUp,
+} from "lucide-react";
 
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 const EMAIL = "claudia.pacheco.dev@gmail.com";
@@ -32,7 +46,10 @@ const STACK = [
     items: [
       { name: "PostgreSQL", icon: `${DI}/postgresql/postgresql-original.svg` },
       { name: "MongoDB", icon: `${DI}/mongodb/mongodb-original.svg` },
-      { name: "AWS", icon: `${DI}/amazonwebservices/amazonwebservices-plain-wordmark.svg` },
+      {
+        name: "AWS",
+        icon: `${DI}/amazonwebservices/amazonwebservices-plain-wordmark.svg`,
+      },
       { name: "Heroku", icon: `${DI}/heroku/heroku-original.svg` },
     ],
   },
@@ -52,7 +69,10 @@ const STACK = [
   {
     category: "Testing & Debugging",
     items: [
-      { name: "BrowserStack", icon: `${DI}/browserstack/browserstack-original.svg` },
+      {
+        name: "BrowserStack",
+        icon: `${DI}/browserstack/browserstack-original.svg`,
+      },
       { name: "Insomnia", icon: `${DI}/insomnia/insomnia-original.svg` },
       { name: "Telerik Fiddler", icon: "https://www.telerik.com/favicon.ico" },
     ],
@@ -69,7 +89,8 @@ const PROJECTS = [
     url: "flying-harry-potter.netlify.app",
     live: "https://flying-harry-potter.netlify.app/",
     github: "https://github.com/claudia-pacheco/Project-1",
-    image: "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=900&h=560&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=900&h=560&fit=crop&auto=format",
   },
   {
     id: "02",
@@ -80,7 +101,8 @@ const PROJECTS = [
     url: "dungeons-n-dragons.netlify.app",
     live: "https://dungeons-n-dragons.netlify.app/",
     github: "https://github.com/claudia-pacheco/project-2",
-    image: "https://images.unsplash.com/photo-1549056572-75914d5d5fd4?w=900&h=560&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1549056572-75914d5d5fd4?w=900&h=560&fit=crop&auto=format",
   },
   {
     id: "03",
@@ -91,7 +113,8 @@ const PROJECTS = [
     url: "walkiessei22.netlify.app",
     live: "https://walkiessei22.netlify.app/",
     github: "https://github.com/claudia-pacheco/walkies-client",
-    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&h=560&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&h=560&fit=crop&auto=format",
   },
   {
     id: "04",
@@ -102,11 +125,20 @@ const PROJECTS = [
     url: "cloud9-scents.netlify.app",
     live: "https://cloud9-scents.netlify.app/",
     github: "https://github.com/claudia-pacheco/perfumes-frontend",
-    image: "https://images.unsplash.com/photo-1595425959632-34f2822322ce?w=900&h=560&fit=crop&auto=format",
+    image:
+      "https://images.unsplash.com/photo-1595425959632-34f2822322ce?w=900&h=560&fit=crop&auto=format",
   },
 ];
 
-function BrowserMockup({ src, alt, url }: { src: string; alt: string; url: string }) {
+function BrowserMockup({
+  src,
+  alt,
+  url,
+}: {
+  src: string;
+  alt: string;
+  url: string;
+}) {
   return (
     <div className="rounded-xl overflow-hidden border border-border shadow-md bg-secondary/50 flex-shrink-0">
       {/* Chrome bar */}
@@ -123,17 +155,37 @@ function BrowserMockup({ src, alt, url }: { src: string; alt: string; url: strin
       </div>
       {/* Screenshot */}
       <div className="aspect-[16/10] overflow-hidden bg-secondary">
-        <img src={src} alt={alt} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        />
       </div>
     </div>
   );
 }
 
 const SKILLS = [
-  { icon: Code2, name: "Frontend Development", desc: "React, JavaScript, TypeScript, CSS" },
-  { icon: Database, name: "Backend & APIs", desc: "Node.js, Express, Python, Django" },
-  { icon: Palette, name: "Databases & Cloud", desc: "PostgreSQL, MongoDB, AWS" },
-  { icon: Sparkles, name: "Creative Solutions", desc: "Innovation & Problem Solving" },
+  {
+    icon: Code2,
+    name: "Frontend Development",
+    desc: "React, JavaScript, TypeScript, CSS",
+  },
+  {
+    icon: Database,
+    name: "Backend & APIs",
+    desc: "Node.js, Express, Python, Django",
+  },
+  {
+    icon: Palette,
+    name: "Databases & Cloud",
+    desc: "PostgreSQL, MongoDB, AWS",
+  },
+  {
+    icon: Sparkles,
+    name: "Creative Solutions",
+    desc: "Innovation & Problem Solving",
+  },
 ];
 
 export default function App() {
@@ -141,8 +193,11 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      return (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
     }
     return false;
   });
@@ -169,14 +224,15 @@ export default function App() {
     }
   }, [darkMode]);
 
-
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
-
       {/* ── Loading screen ──────────────────────────────────────────── */}
       <motion.div
         initial={{ opacity: 1 }}
-        animate={{ opacity: loading ? 1 : 0, pointerEvents: loading ? "auto" : "none" }}
+        animate={{
+          opacity: loading ? 1 : 0,
+          pointerEvents: loading ? "auto" : "none",
+        }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center gap-10"
       >
@@ -205,10 +261,9 @@ export default function App() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="font-[family-name:var(--font-body)] text-xs tracking-[0.2em] uppercase text-muted-foreground"
         >
-          Welcome to my portfolio
+          Welcome to my <em>coding</em> world
         </motion.p>
       </motion.div>
-
 
       {/* ── Nav ─────────────────────────────────────────────────────── */}
       <motion.nav
@@ -224,13 +279,13 @@ export default function App() {
             transition={{ delay: 0.2 }}
             className="font-[family-name:var(--font-display)] text-2xl font-light italic"
           >
-            Claudia Pacheco 
+            Claudia Pacheco
           </motion.div>
           <div className="hidden md:flex items-center gap-8">
             {[
+              { label: "About", href: "#about" },
               { label: "Work", href: "#experience" },
               { label: "Tools", href: "#stack" },
-              { label: "About", href: "#about" },
               { label: "Contact", href: "#contact" },
             ].map((item, i) => (
               <motion.a
@@ -268,7 +323,11 @@ export default function App() {
                 animate={{ rotate: 0, opacity: 1 }}
                 transition={{ duration: 0.25 }}
               >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                {darkMode ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
               </motion.div>
             </motion.button>
           </div>
@@ -284,21 +343,26 @@ export default function App() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-8"
           >
-        
-
-            <h1 className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9]"
-              style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}>
-              Hi, I’m 
+            <h1
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9]"
+              style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
+            >
+              Hi, I’m
               <br />
               <em className="text-primary">Claudia</em>.
             </h1>
 
-             <p className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "style={{ fontSize: "clamp(2rem, 1vw, 9rem)" }}>
+            <p
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "
+              style={{ fontSize: "clamp(2rem, 1vw, 9rem)" }}
+            >
               I build web applications.
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-Experience in delivering wealth management and financial services platforms used by thousands of users worldwide.            </p>
+              Based in London and delivering wealth management and financial
+              services platforms used by thousands of users worldwide.
+            </p>
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -325,7 +389,6 @@ Experience in delivering wealth management and financial services platforms used
             </motion.div>
           </motion.div>
         </div>
-        
       </section>
 
       {/* ── Skills ──────────────────────────────────────────────────── */}
@@ -360,8 +423,12 @@ Experience in delivering wealth management and financial services platforms used
                 <div className="w-11 h-11 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <skill.icon className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-xl mb-2">{skill.name}</h3>
-                <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground">{skill.desc}</p>
+                <h3 className="font-[family-name:var(--font-display)] text-xl mb-2">
+                  {skill.name}
+                </h3>
+                <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground">
+                  {skill.desc}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -381,7 +448,7 @@ Experience in delivering wealth management and financial services platforms used
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               <p className="font-[family-name:var(--font-body)] text-[0.65rem] tracking-[0.16em] uppercase text-primary">
-                Currently Working On
+                Things keeping me busy these days
               </p>
             </div>
             <div className="hidden md:block flex-1 h-px bg-border" />
@@ -391,13 +458,13 @@ Experience in delivering wealth management and financial services platforms used
             {[
               {
                 title: "TypeScript",
-                desc: "Working through types, interfaces, and generics to write more robust, self-documenting code — and gradually applying it to existing projects.",
+                desc: "Working through types, interfaces and generics to write more robust, self-documenting code and gradually applying it to existing projects.",
                 label: "Learning",
                 icon: "✦",
               },
               {
                 title: "AI-Assisted Development",
-                desc: "Exploring how to integrate AI tooling into day-to-day workflows — from code generation to agentic pipelines — to ship faster without sacrificing quality.",
+                desc: "Exploring how to integrate AI tooling into day-to-day workflows from code generation to agentic pipelines and learn more efficient ways to develop software.",
                 label: "Exploring",
                 icon: "◈",
               },
@@ -410,19 +477,104 @@ Experience in delivering wealth management and financial services platforms used
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex items-start gap-4 p-6 rounded-2xl border border-border hover:border-primary/30 bg-secondary/10 hover:bg-secondary/25 transition-all duration-300"
               >
-                <span className="text-primary text-xl leading-none mt-0.5 flex-shrink-0">{item.icon}</span>
+                <span className="text-primary text-xl leading-none mt-0.5 flex-shrink-0">
+                  {item.icon}
+                </span>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="font-[family-name:var(--font-body)] text-[0.6rem] tracking-[0.14em] uppercase text-primary/70 bg-primary/8 px-2 py-0.5 rounded-full">
                       {item.label}
                     </span>
                   </div>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-light mb-2">{item.title}</p>
-                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-light mb-2">
+                    {item.title}
+                  </p>
+                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── About ───────────────────────────────────────────────────── */}
+      <section id="about" className="py-32 px-6 lg:px-12 bg-secondary/30">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light text-center mb-14">
+              About <em>Me</em>
+            </h2>
+
+            <div className="font-[family-name:var(--font-body)] text-base leading-relaxed space-y-5 text-muted-foreground">
+              <p>
+                I'm a Full Stack Developer based in London. My interest in
+                technology started when I programmed a robot at school and it’s
+                been a constant ever since.
+              </p>
+              <p>
+                After studying Computer Science at the University of
+                Hertfordshire and completing the Software Engineering Immersive
+                Bootcamp at General Assembly, I moved into the industry as a
+                Web Developer where I've been building web applications
+                used by thousands of people in financial services and wealth
+                management.
+              </p>
+              <p>
+                I’ve worked on large-scale platforms for clients across the UK
+                and US as well as internationally collaborating with designers,
+                product managers, business analysts and engineers to deliver
+                features from concept through to production.
+              </p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="pt-12 flex justify-center gap-5"
+            >
+              {[
+                {
+                  Icon: Github,
+                  label: "GitHub",
+                  href: "https://github.com/claudia-pacheco",
+                  external: true,
+                },
+                {
+                  Icon: Linkedin,
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/in/claudia-pacheco1/",
+                  external: true,
+                },
+                {
+                  Icon: Mail,
+                  label: "Email",
+                  href: `mailto:${EMAIL}`,
+                  external: false,
+                },
+              ].map(({ Icon, label, href, external }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-11 h-11 bg-card rounded-full flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all duration-300"
+                >
+                  <Icon className="w-4 h-4" />
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -437,11 +589,10 @@ Experience in delivering wealth management and financial services platforms used
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4"
           >
             <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light leading-[0.9]">
-              Work<br /><em>Experience</em>
+              Work
+              <br />
+              <em>Experience</em>
             </h2>
-            <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground max-w-xs md:text-right leading-relaxed">
-              Building real-world products used by thousands of people every day.
-            </p>
           </motion.div>
 
           {/* Featured role */}
@@ -452,9 +603,7 @@ Experience in delivering wealth management and financial services platforms used
             transition={{ duration: 0.6 }}
             className="group relative border border-border rounded-3xl p-10 md:p-14 hover:border-primary/40 transition-colors duration-300 overflow-hidden"
           >
-            {/* Background accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-primary/5 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-
+            
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 relative">
               {/* Left */}
               <div className="space-y-6">
@@ -495,7 +644,15 @@ Experience in delivering wealth management and financial services platforms used
                 </ul>
 
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {["HTML", "CSS", "AWS", "Fiddler", "BrowserStack", "Mobile App Dev", "Company Specific Tech"].map((tag) => (
+                  {[
+                    "HTML",
+                    "CSS",
+                    "AWS",
+                    "Fiddler",
+                    "BrowserStack",
+                    "Mobile App Dev",
+                    "Company Specific Tech",
+                  ].map((tag) => (
                     <span
                       key={tag}
                       className="font-[family-name:var(--font-body)] text-xs bg-secondary/70 rounded-full px-3 py-1"
@@ -508,7 +665,7 @@ Experience in delivering wealth management and financial services platforms used
                 {/* Clients */}
                 <div className="pt-4 border-t border-border">
                   <p className="font-[family-name:var(--font-body)] text-[0.65rem] tracking-[0.16em] uppercase text-primary mb-3">
-                    Client Projects
+                    Client Projects Include
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {[
@@ -522,7 +679,9 @@ Experience in delivering wealth management and financial services platforms used
                         className="inline-flex items-center gap-1.5 font-[family-name:var(--font-body)] text-xs border border-border rounded-full px-3 py-1"
                       >
                         {client.name}
-                        <span className="text-muted-foreground/50 text-[0.6rem]">{client.region}</span>
+                        <span className="text-muted-foreground/50 text-[0.6rem]">
+                          {client.region}
+                        </span>
                       </span>
                     ))}
                   </div>
@@ -532,12 +691,20 @@ Experience in delivering wealth management and financial services platforms used
               {/* Right — meta */}
               <div className="flex flex-row md:flex-col items-start md:items-end gap-6 md:gap-4 md:text-right">
                 <div>
-                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/60 tracking-widest uppercase mb-1">Period</p>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-light">June 2023 – May 2026</p>
+                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/60 tracking-widest uppercase mb-1">
+                    Period
+                  </p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-light">
+                    June 2023 – May 2026
+                  </p>
                 </div>
                 <div>
-                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/60 tracking-widest uppercase mb-1">Location</p>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-light">London, UK</p>
+                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/60 tracking-widest uppercase mb-1">
+                    Location
+                  </p>
+                  <p className="font-[family-name:var(--font-display)] text-lg font-light">
+                    London, UK
+                  </p>
                 </div>
                 <motion.a
                   href="https://www.investcloud.com"
@@ -576,14 +743,16 @@ Experience in delivering wealth management and financial services platforms used
               {
                 school: "General Assembly",
                 credential: "Software Engineering Immersive Flex",
-                detail: "Intensive full-stack programme covering React, Node.js, databases, and modern development workflows.",
+                detail:
+                  "Intensive full-stack programme covering React, Node.js, databases and modern development workflows.",
                 year: "2021 – 2022",
                 icon: "G",
               },
               {
                 school: "University of Hertfordshire",
                 credential: "CertHE in Computer Science",
-                detail: "Computer Science — fundamentals of programming, algorithms, data structures, and systems design.",
+                detail:
+                  "Computer Science — fundamentals of programming, algorithms, data structures and systems design.",
                 year: "2021",
                 icon: "U",
               },
@@ -603,10 +772,16 @@ Experience in delivering wealth management and financial services platforms used
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center justify-between gap-3 mb-1">
-                    <p className="font-[family-name:var(--font-display)] text-lg font-light">{edu.school}</p>
+                    <p className="font-[family-name:var(--font-display)] text-lg font-light">
+                      {edu.school}
+                    </p>
                   </div>
-                  <p className="font-[family-name:var(--font-body)] text-xs text-primary tracking-wide mb-2">{edu.credential}</p>
-                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground leading-relaxed">{edu.detail}</p>
+                  <p className="font-[family-name:var(--font-body)] text-xs text-primary tracking-wide mb-2">
+                    {edu.credential}
+                  </p>
+                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground leading-relaxed">
+                    {edu.detail}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -628,7 +803,7 @@ Experience in delivering wealth management and financial services platforms used
               Languages <em>&amp; Tools</em>
             </h2>
             <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground tracking-wide">
-              Technologies I reach for to build production-ready software
+              Technologies I reach for to build software
             </p>
           </motion.div>
 
@@ -677,10 +852,13 @@ Experience in delivering wealth management and financial services platforms used
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4"
           >
             <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light leading-[0.9]">
-              Bootcamp<br /><em>Projects</em>
+              Bootcamp
+              <br />
+              <em>Projects</em>
             </h2>
             <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground max-w-xs md:text-right leading-relaxed">
-              Four projects across 24 weeks — from solo games to full stack apps, each one pushing what I knew further.
+              Four projects across 24 weeks — from solo games to full stack
+              apps, each one pushing what I knew further.
             </p>
           </motion.div>
 
@@ -741,71 +919,25 @@ Experience in delivering wealth management and financial services platforms used
 
                   {/* Mobile image */}
                   <div className="mt-6 lg:hidden">
-                    <BrowserMockup src={project.image} alt={project.title} url={project.url} />
+                    <BrowserMockup
+                      src={project.image}
+                      alt={project.title}
+                      url={project.url}
+                    />
                   </div>
                 </div>
 
                 {/* Right — browser mockup (desktop only) */}
                 <div className="hidden lg:block">
-                  <BrowserMockup src={project.image} alt={project.title} url={project.url} />
+                  <BrowserMockup
+                    src={project.image}
+                    alt={project.title}
+                    url={project.url}
+                  />
                 </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── About ───────────────────────────────────────────────────── */}
-      <section id="about" className="py-32 px-6 lg:px-12 bg-secondary/30">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light text-center mb-14">
-              About <em>Me</em>
-            </h2>
-
-            <div className="font-[family-name:var(--font-body)] text-base leading-relaxed space-y-5 text-muted-foreground">
-              <p>
-                I'm a Software Engineer with a strong passion for technology — one that started when I first programmed a robot at school and never really switched off.
-              </p>
-              <p>
-                After studying Computer Science at the University of Hertfordshire and completing the Software Engineering Immersive at General Assembly, I moved into the industry as a Full Stack Developer, where I've been building and shipping web applications in financial services ever since.
-              </p>
-              <p>
-                Outside of work, you'll find me doing martial arts, travelling, cooking, or disappearing into the mountains on a hike.
-              </p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="pt-12 flex justify-center gap-5"
-            >
-              {[
-                { Icon: Github, label: "GitHub", href: "https://github.com/claudia-pacheco", external: true },
-                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/claudia-pacheco1/", external: true },
-                { Icon: Mail, label: "Email", href: `mailto:${EMAIL}`, external: false },
-              ].map(({ Icon, label, href, external }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-11 h-11 bg-card rounded-full flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </motion.a>
-              ))}
-            </motion.div>
-          </motion.div>
         </div>
       </section>
 
@@ -819,15 +951,18 @@ Experience in delivering wealth management and financial services platforms used
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <h2 className="font-[family-name:var(--font-display)] font-light leading-[0.92]"
-              style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)" }}>
-              Let&apos;s Create Something
+            <h2
+              className="font-[family-name:var(--font-display)] font-light leading-[0.92]"
+              style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)" }}
+            >
+              Get in
               <br />
-              <em className="text-primary">Beautiful Together</em>
+              <em className="text-primary">Touch</em>
             </h2>
 
             <p className="font-[family-name:var(--font-body)] text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              <em>Reach out</em> :) I’m always open to connecting with
+              like-minded people and exploring new opportunities.
             </p>
 
             <motion.a
@@ -846,8 +981,30 @@ Experience in delivering wealth management and financial services platforms used
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <footer className="border-t border-border py-10 px-6 lg:px-16 xl:px-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-[family-name:var(--font-display)] text-xl font-light italic">Claudia Pacheco</p>
-          <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground">© 2025 All rights reserved</p>
+          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <a
+              href="https://github.com/claudia-pacheco"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              GitHub
+            </a>
+
+            <span>•</span>
+
+            <a
+              href="https://www.linkedin.com/in/claudia-pacheco1/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>{" "}
+          <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground">
+            © 2026 Claudia Pacheco
+          </p>
         </div>
       </footer>
 
@@ -855,7 +1012,11 @@ Experience in delivering wealth management and financial services platforms used
       <motion.button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: scrolled ? 1 : 0, scale: scrolled ? 1 : 0.8, pointerEvents: scrolled ? "auto" : "none" }}
+        animate={{
+          opacity: scrolled ? 1 : 0,
+          scale: scrolled ? 1 : 0.8,
+          pointerEvents: scrolled ? "auto" : "none",
+        }}
         transition={{ duration: 0.25 }}
         className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:shadow-xl hover:scale-110 transition-transform duration-200"
         aria-label="Back to top"
