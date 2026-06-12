@@ -354,7 +354,7 @@ export default function App() {
 
             <p
               className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "
-              style={{ fontSize: "clamp(3rem, 1vw, 9rem)" }}
+              style={{ fontSize: "clamp(2rem, 1vw, 9rem)" }}
             >
              I build web applications.
             </p>
