@@ -360,8 +360,7 @@ export default function App() {
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-lg font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Based in London and deliver wealth management and financial
-              services platforms used by thousands of users worldwide.
+              Blending creativity with code to build beautiful and functional platforms.
             </p>
 
             <motion.div
@@ -521,10 +520,9 @@ export default function App() {
               <p>
                 After studying Computer Science at the University of
                 Hertfordshire and completing the Software Engineering Immersive
-                Bootcamp at General Assembly, I moved into the industry as a
-                Web Developer where I've been building web applications
-                used by thousands of people in financial services and wealth
-                management.
+                Bootcamp at General Assembly, I moved into the industry as a Web
+                Developer where I've been building web applications used by
+                thousands of people in financial services and wealth management.
               </p>
               <p>
                 I’ve worked on large-scale platforms for clients across the UK
@@ -603,7 +601,6 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="group relative border border-border rounded-3xl p-10 md:p-14 hover:border-primary/40 transition-colors duration-300 overflow-hidden"
           >
-            
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 relative">
               {/* Left */}
               <div className="space-y-6">
