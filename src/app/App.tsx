@@ -460,13 +460,13 @@ export default function App() {
             {[
               {
                 title: "TypeScript",
-                desc: "Working through types, interfaces and generics to write more robust, self-documenting code and gradually applying it to existing projects.",
+                desc: "Working through types, interfaces and generics to gradually apply it to existing and develop new projects.",
                 label: "Learning",
                 icon: "✦",
               },
               {
-                title: "AI-Assisted Development",
-                desc: "Exploring how to integrate AI tooling into day-to-day workflows from code generation to agentic pipelines and learn more efficient ways to develop software.",
+                title: "AI-Assisted Development & Vibe Coding",
+                desc: "Exploring how AI can support the development process, from speeding up everyday tasks to experimenting with agent-based workflows and new ways of building software.",
                 label: "Exploring",
                 icon: "◈",
               },
