@@ -39,6 +39,7 @@ const STACK = [
       { name: "Express", icon: `${DI}/express/express-original.svg` },
       { name: "Django", icon: `${DI}/django/django-plain.svg` },
       { name: "Material UI", icon: `${DI}/materialui/materialui-original.svg` },
+      { name: "Tailwind CSS", icon: `${DI}/tailwindcss/tailwindcss-original.svg` },
     ],
   },
   {
@@ -64,6 +65,7 @@ const STACK = [
       { name: "Jest", icon: `${DI}/jest/jest-plain.svg` },
       { name: "Trello", icon: `${DI}/trello/trello-original.svg` },
       { name: "Slack", icon: `${DI}/slack/slack-original.svg` },
+      { name: "Vite", icon: `${DI}/vite/vite-original.svg` },
     ],
   },
   {
@@ -120,7 +122,7 @@ const PROJECTS = [
     id: "04",
     title: "Cloud9 Scents",
     category: "Solo · Full Stack",
-    desc: "A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and Material UI for the frontend.",
+    desc: "A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and t for the frontend.",
     tags: ["React", "Python", "Django", "PostgreSQL", "Material UI"],
     url: "cloud9-scents.netlify.app",
     live: "https://cloud9-scents.netlify.app/",
@@ -360,8 +362,8 @@ export default function App() {
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-base font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Hello world. Get to know me and some of the
-              projects I have created.
+              Explore this portfolio to learn more about me and some of the
+              projects I have brought to life.
             </p>
 
             <motion.div
