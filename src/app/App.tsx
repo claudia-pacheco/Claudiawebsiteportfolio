@@ -744,7 +744,7 @@ export default function App() {
                 school: "General Assembly",
                 credential: "Software Engineering Immersive Flex",
                 detail:
-                  "Intensive full-stack programme covering React, Node.js, databases and modern development workflows.",
+                  "Intensive full-stack programme covering React, Node.js, databases and four full stack projects.",
                 year: "2021 – 2022",
                 icon: "G",
               },
