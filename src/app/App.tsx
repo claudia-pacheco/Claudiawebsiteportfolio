@@ -627,12 +627,12 @@ export default function App() {
 
                 <ul className="space-y-3">
                   {[
-                    "Delivered end-to-end functionality by engineering web application features on top of an internal platform, utilising front-end components, configuration, and backend integrations.",
-                    "Reduced code duplication and enhanced UI maintainability by controlling application behaviour — navigation, permissions, and validation rules — through metadata and configuration files.",
-                    "Safeguarded system security by designing and implementing role-based access and navigation, ensuring users exclusively viewed and accessed applications appropriate to their roles.",
-                    "Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments with frozen builds for UAT and regression testing.",
-                    "Facilitated seamless production rollouts and hotfixes by contributing to release and deployment processes, including the preparation of detailed deployment notes regarding versions, environments, and browser coverage.",
-                    "Accelerated root-cause analysis by enhancing logging and documentation whilst investigating and resolving production incidents related to UI, configuration, and environment differences.",
+                    "Delivered end‑to‑end functionality by building web application features on top of an internal platform, using frontend components, configuration and backend integrations.",
+                    "Reduced code duplication and improved UI maintainability by controlling navigation, permissions and validation rules through global and configuration files.",
+                    "Enhanced system security by designing and implementing role‑based access and navigation, ensuring users only accessed applications appropriate to their roles.",
+                    "Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments for UAT and regression testing.",
+                    "Supported smooth production rollouts and hotfixes by preparing detailed deployment notes covering versions, environments and browser compatibility.",
+                    "Improved debugging analysis by enhancing logging, documentation and investigation processes for production incidents."
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -650,8 +650,8 @@ export default function App() {
                     "AWS",
                     "Fiddler",
                     "BrowserStack",
-                    "Mobile App Dev",
-                    "Company Specific Tech",
+                    "iOS & Android",
+                    "Company Internal Platform",
                   ].map((tag) => (
                     <span
                       key={tag}
