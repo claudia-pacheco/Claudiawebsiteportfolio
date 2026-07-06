@@ -907,11 +907,19 @@ export default function App() {
                     {group.items.map((item) => (
                       <motion.span
                         key={item.name}
-                        whileHover={{ scale: 1.05 }}
-                        className="inline-flex items-center gap-2.5 font-[family-name:var(--font-body)] text-xs border rounded-full px-3 py-2 transition-colors duration-200 cursor-default"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="inline-flex items-center gap-2.5 font-[family-name:var(--font-body)] text-xs border rounded-full px-3 py-2 transition-all duration-200 cursor-default"
                         style={{
                           backgroundColor: `color-mix(in srgb, ${colors.bg} 15%, white 85%)`,
                           borderColor: `color-mix(in srgb, ${colors.label} 25%, transparent 75%)`,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.boxShadow = `0 4px 12px ${colors.label}33`;
+                          e.currentTarget.style.borderColor = colors.label;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.boxShadow = "none";
+                          e.currentTarget.style.borderColor = `color-mix(in srgb, ${colors.label} 25%, transparent 75%)`;
                         }}
                       >
                         <img
@@ -959,7 +967,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
+                whileHover={{ y: -2, scale: 1.01 }}
                 className="group grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 items-center py-12 -mx-5 px-5 rounded-2xl hover:bg-secondary/20 transition-colors duration-300"
+                style={{ originX: 0.5, originY: 0.5 }}
               >
                 {/* Left — text */}
                 <div>
@@ -1091,9 +1101,18 @@ export default function App() {
 
             <motion.a
               href={`mailto:${EMAIL}`}
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.96 }}
-              className="mt-6 px-12 py-5 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide hover:shadow-xl transition-all inline-flex items-center gap-3"
+              className="mt-6 px-12 py-5 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide transition-all inline-flex items-center gap-3"
+              style={{
+                boxShadow: "0 8px 24px rgba(217, 168, 179, 0.2)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 12px 32px rgba(217, 168, 179, 0.4), 0 0 20px rgba(217, 168, 179, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(217, 168, 179, 0.2)";
+              }}
             >
               <Mail className="w-4 h-4" />
               Say Hello
