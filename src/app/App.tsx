@@ -946,16 +946,21 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4"
+            className="flex flex-col gap-6 mb-20"
           >
-            <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light leading-[0.9]">
-              Bootcamp
-              <br />
-              <em>Projects</em>
-            </h2>
-            <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground max-w-xs md:text-right leading-relaxed">
-              Four projects across 24 weeks — from solo games to full stack
-              apps, each one pushing what I knew further.
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light leading-[0.9]">
+                Bootcamp
+                <br />
+                <em>Projects</em>
+              </h2>
+              <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground max-w-xs md:text-right leading-relaxed">
+                Four projects across 24 weeks — from solo games to full stack
+                apps, each one pushing what I knew further.
+              </p>
+            </div>
+            <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/70 tracking-wide">
+              Tag colors by category: <span style={{ color: "var(--cool-accent)" }}>● Frontend</span> · <span style={{ color: "var(--warm-accent)" }}>● Backend</span> · <span style={{ color: "var(--success)" }}>● Databases</span> · <span style={{ color: "var(--warning)" }}>● Core Concepts</span>
             </p>
           </motion.div>
 
