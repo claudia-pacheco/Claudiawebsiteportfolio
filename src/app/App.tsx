@@ -321,11 +321,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.62 }}
               onClick={() => setDarkMode(!darkMode)}
-              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
-                darkMode
-                  ? "bg-[#f2ecf7] text-[#17121e] hover:bg-white"
-                  : "bg-[#17121e] text-[#f2ecf7] hover:bg-[#2a2237]"
-              }`}
+              className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 bg-secondary text-foreground hover:bg-muted"
               aria-label="Toggle dark mode"
             >
               <motion.div
@@ -440,7 +436,7 @@ export default function App() {
                   whileHover={{ y: -8 }}
                   className="bg-card p-8 rounded-2xl border transition-all group"
                   style={{
-                    backgroundColor: `color-mix(in srgb, ${colors.bg} 8%, white 92%)`,
+                    backgroundColor: `color-mix(in srgb, ${colors.bg} 8%, var(--background) 92%)`,
                     borderColor: colors.border,
                   }}
                   onMouseEnter={(e) => {
@@ -453,7 +449,7 @@ export default function App() {
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:shadow-sm transition-all"
                     style={{
-                      backgroundColor: `color-mix(in srgb, ${colors.bg} 40%, white 60%)`,
+                      backgroundColor: `color-mix(in srgb, ${colors.bg} 40%, var(--background) 60%)`,
                     }}
                   >
                     <skill.icon className="w-7 h-7" style={{ color: colors.icon }} />
@@ -506,8 +502,8 @@ export default function App() {
                   style={{
                     borderColor: "var(--border)",
                     backgroundColor: i === 0
-                      ? "color-mix(in srgb, var(--warning-light) 5%, white 95%)"
-                      : "color-mix(in srgb, var(--cool-accent-light) 5%, white 95%)",
+                      ? "color-mix(in srgb, var(--warning-light) 5%, var(--background) 95%)"
+                      : "color-mix(in srgb, var(--cool-accent-light) 5%, var(--background) 95%)",
                   }}
                 >
                   <div
@@ -617,7 +613,7 @@ export default function App() {
                       color: "var(--foreground)",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = `color-mix(in srgb, ${colors.bg} 40%, white 60%)`;
+                      e.currentTarget.style.backgroundColor = `color-mix(in srgb, ${colors.bg} 40%, var(--background) 60%)`;
                       e.currentTarget.style.borderColor = colors.text;
                       e.currentTarget.style.color = colors.text;
                     }}
@@ -662,7 +658,7 @@ export default function App() {
             className="group relative rounded-3xl p-10 md:p-14 overflow-hidden transition-all duration-300"
             style={{
               border: "1px solid rgba(212, 116, 79, 0.2)",
-              backgroundColor: "color-mix(in srgb, var(--warm-accent-light) 3%, white 97%)",
+              backgroundColor: "color-mix(in srgb, var(--warm-accent-light) 3%, var(--background) 97%)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = "rgba(212, 116, 79, 0.4)";
@@ -910,7 +906,7 @@ export default function App() {
                         whileHover={{ scale: 1.05, y: -2 }}
                         className="inline-flex items-center gap-2.5 font-[family-name:var(--font-body)] text-xs border rounded-full px-3 py-2 transition-all duration-200 cursor-default"
                         style={{
-                          backgroundColor: `color-mix(in srgb, ${colors.bg} 15%, white 85%)`,
+                          backgroundColor: `color-mix(in srgb, ${colors.bg} 15%, var(--background) 85%)`,
                           borderColor: `color-mix(in srgb, ${colors.label} 25%, transparent 75%)`,
                         }}
                         onMouseEnter={(e) => {
@@ -1046,7 +1042,7 @@ export default function App() {
                           key={tag}
                           className="font-[family-name:var(--font-body)] text-xs rounded-full px-3 py-1"
                           style={{
-                            backgroundColor: `color-mix(in srgb, ${colors.bg} 20%, white 80%)`,
+                            backgroundColor: `color-mix(in srgb, ${colors.bg} 20%, var(--background) 80%)`,
                             color: colors.text,
                             border: `1px solid color-mix(in srgb, ${colors.text} 20%, transparent 80%)`,
                           }}
