@@ -30,6 +30,7 @@ const STACK = [
       { name: "CSS3", icon: `${DI}/css3/css3-original.svg` },
       { name: "SQL", icon: `${DI}/postgresql/postgresql-original.svg` },
     ],
+    color: "cool",
   },
   {
     category: "Frameworks & Libraries",
@@ -41,6 +42,7 @@ const STACK = [
       { name: "Material UI", icon: `${DI}/materialui/materialui-original.svg` },
       { name: "Tailwind CSS", icon: `${DI}/tailwindcss/tailwindcss-original.svg` },
     ],
+    color: "warm",
   },
   {
     category: "Databases & Cloud",
@@ -53,6 +55,7 @@ const STACK = [
       },
       { name: "Heroku", icon: `${DI}/heroku/heroku-original.svg` },
     ],
+    color: "success",
   },
   {
     category: "Tools & Workflow",
@@ -67,6 +70,7 @@ const STACK = [
       { name: "Slack", icon: `${DI}/slack/slack-original.svg` },
       { name: "Vite", icon: `${DI}/vite/vite-original.svg` },
     ],
+    color: "warning",
   },
   {
     category: "Testing & Debugging",
@@ -78,6 +82,7 @@ const STACK = [
       { name: "Insomnia", icon: `${DI}/insomnia/insomnia-original.svg` },
       { name: "Telerik Fiddler", icon: "https://www.telerik.com/favicon.ico" },
     ],
+    color: "primary",
   },
 ];
 
@@ -172,21 +177,25 @@ const SKILLS = [
     icon: Code2,
     name: "Frontend Development",
     desc: "Building interactive UIs with React, TypeScript, and modern CSS. I focus on performance, accessibility, and user experience.",
+    color: "cool",
   },
   {
     icon: Database,
     name: "Full Stack Architectures",
     desc: "End-to-end systems using Node.js, Express, Python, and Django. Comfortable with both REST and internal platform APIs.",
+    color: "warm",
   },
   {
     icon: Palette,
     name: "Scalable Databases",
     desc: "PostgreSQL for structured data, MongoDB for flexibility. Experience deploying and maintaining databases at scale on AWS.",
+    color: "success",
   },
   {
     icon: Sparkles,
     name: "Problem Solving",
     desc: "Tackling complex architectural decisions, debugging production issues, and collaborating across teams to ship features.",
+    color: "warning",
   },
 ];
 
@@ -351,7 +360,18 @@ export default function App() {
             >
               Hi, I’m
               <br />
-              <em className="text-primary">Claudia</em>.
+              <em
+                style={{
+                  background: "linear-gradient(135deg, var(--primary) 0%, var(--warm-accent) 100%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  fontStyle: "italic",
+                }}
+              >
+                Claudia
+              </em>
+              .
             </h1>
 
             <p
@@ -412,27 +432,52 @@ export default function App() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SKILLS.map((skill, i) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.6 }}
-                whileHover={{ y: -8 }}
-                className="bg-card p-8 rounded-2xl border border-border hover:border-primary/40 hover:shadow-md transition-all group"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <skill.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="font-[family-name:var(--font-display)] text-lg font-light mb-3 leading-snug">
-                  {skill.name}
-                </h3>
-                <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground leading-relaxed">
-                  {skill.desc}
-                </p>
-              </motion.div>
-            ))}
+            {SKILLS.map((skill, i) => {
+              const colorMap = {
+                cool: { bg: "var(--cool-accent-light)", icon: "var(--cool-accent)", border: "rgba(93, 139, 138, 0.2)" },
+                warm: { bg: "var(--warm-accent-light)", icon: "var(--warm-accent)", border: "rgba(212, 116, 79, 0.2)" },
+                success: { bg: "var(--success-light)", icon: "var(--success)", border: "rgba(74, 157, 111, 0.2)" },
+                warning: { bg: "var(--warning-light)", icon: "var(--warning)", border: "rgba(212, 168, 79, 0.2)" },
+              };
+              const colors = colorMap[skill.color as keyof typeof colorMap];
+
+              return (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.6 }}
+                  whileHover={{ y: -8 }}
+                  className="bg-card p-8 rounded-2xl border transition-all group"
+                  style={{
+                    backgroundColor: `color-mix(in srgb, ${colors.bg} 8%, white 92%)`,
+                    borderColor: colors.border,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = colors.icon;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = colors.border;
+                  }}
+                >
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:shadow-sm transition-all"
+                    style={{
+                      backgroundColor: `color-mix(in srgb, ${colors.bg} 40%, white 60%)`,
+                    }}
+                  >
+                    <skill.icon className="w-7 h-7" style={{ color: colors.icon }} />
+                  </div>
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-light mb-3 leading-snug">
+                    {skill.name}
+                  </h3>
+                  <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground leading-relaxed">
+                    {skill.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -468,9 +513,20 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex items-start gap-4 p-5 rounded-2xl border border-border bg-card hover:border-primary/30 transition-colors duration-300"
+                  className="flex items-start gap-4 p-5 rounded-2xl border bg-card transition-all duration-300"
+                  style={{
+                    borderColor: "var(--border)",
+                    backgroundColor: i === 0
+                      ? "color-mix(in srgb, var(--warning-light) 5%, white 95%)"
+                      : "color-mix(in srgb, var(--cool-accent-light) 5%, white 95%)",
+                  }}
                 >
-                  <div className="flex-shrink-0 w-1 h-8 bg-primary rounded-full mt-1" />
+                  <div
+                    className="flex-shrink-0 w-1 h-8 rounded-full mt-1"
+                    style={{
+                      backgroundColor: i === 0 ? "var(--warning)" : "var(--cool-accent)",
+                    }}
+                  />
                   <div className="flex-1">
                     <h4 className="font-[family-name:var(--font-display)] text-lg font-light mb-2">
                       {item.title}
@@ -533,32 +589,59 @@ export default function App() {
                   label: "GitHub",
                   href: "https://github.com/claudia-pacheco",
                   external: true,
+                  color: "cool",
                 },
                 {
                   Icon: Linkedin,
                   label: "LinkedIn",
                   href: "https://www.linkedin.com/in/claudia-pacheco1/",
                   external: true,
+                  color: "warm",
                 },
                 {
                   Icon: Mail,
                   label: "Email",
                   href: `mailto:${EMAIL}`,
                   external: false,
+                  color: "success",
                 },
-              ].map(({ Icon, label, href, external }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-11 h-11 bg-card rounded-full flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </motion.a>
-              ))}
+              ].map(({ Icon, label, href, external, color }) => {
+                const colorMap = {
+                  cool: { bg: "var(--cool-accent-light)", text: "var(--cool-accent)", border: "rgba(93, 139, 138, 0.3)" },
+                  warm: { bg: "var(--warm-accent-light)", text: "var(--warm-accent)", border: "rgba(212, 116, 79, 0.3)" },
+                  success: { bg: "var(--success-light)", text: "var(--success)", border: "rgba(74, 157, 111, 0.3)" },
+                };
+                const colors = colorMap[color as keyof typeof colorMap];
+
+                return (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-11 h-11 rounded-full flex items-center justify-center border transition-all duration-300"
+                    style={{
+                      backgroundColor: "var(--card)",
+                      borderColor: "var(--border)",
+                      color: "var(--foreground)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = `color-mix(in srgb, ${colors.bg} 40%, white 60%)`;
+                      e.currentTarget.style.borderColor = colors.text;
+                      e.currentTarget.style.color = colors.text;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "var(--card)";
+                      e.currentTarget.style.borderColor = "var(--border)";
+                      e.currentTarget.style.color = "var(--foreground)";
+                    }}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </motion.a>
+                );
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -587,7 +670,17 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group relative border border-border rounded-3xl p-10 md:p-14 hover:border-primary/40 transition-colors duration-300 overflow-hidden"
+            className="group relative rounded-3xl p-10 md:p-14 overflow-hidden transition-all duration-300"
+            style={{
+              border: "1px solid rgba(212, 116, 79, 0.2)",
+              backgroundColor: "color-mix(in srgb, var(--warm-accent-light) 3%, white 97%)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "rgba(212, 116, 79, 0.4)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(212, 116, 79, 0.2)";
+            }}
           >
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 relative">
               {/* Left */}
@@ -793,36 +886,57 @@ export default function App() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {STACK.map((group, i) => (
-              <motion.div
-                key={group.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-colors duration-300"
-              >
-                <p className="font-[family-name:var(--font-body)] text-xs font-medium tracking-[0.2em] uppercase text-primary mb-6">
-                  {group.category}
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {group.items.map((item) => (
-                    <motion.span
-                      key={item.name}
-                      whileHover={{ scale: 1.05 }}
-                      className="inline-flex items-center gap-2.5 font-[family-name:var(--font-body)] text-xs bg-secondary/60 border border-border/80 rounded-full px-3 py-2 hover:border-primary/50 hover:bg-primary/8 transition-colors duration-200 cursor-default"
-                    >
-                      <img
-                        src={item.icon}
-                        alt={item.name}
-                        className="w-4 h-4 object-contain"
-                      />
-                      <span className="text-foreground/90">{item.name}</span>
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+            {STACK.map((group, i) => {
+              const colorMap = {
+                cool: { bg: "var(--cool-accent-light)", label: "var(--cool-accent)", border: "rgba(93, 139, 138, 0.15)" },
+                warm: { bg: "var(--warm-accent-light)", label: "var(--warm-accent)", border: "rgba(212, 116, 79, 0.15)" },
+                success: { bg: "var(--success-light)", label: "var(--success)", border: "rgba(74, 157, 111, 0.15)" },
+                warning: { bg: "var(--warning-light)", label: "var(--warning)", border: "rgba(212, 168, 79, 0.15)" },
+                primary: { bg: "var(--primary)", label: "var(--primary)", border: "rgba(217, 168, 179, 0.2)" },
+              };
+              const colors = colorMap[group.color as keyof typeof colorMap] || colorMap.cool;
+
+              return (
+                <motion.div
+                  key={group.category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07 }}
+                  className="bg-card border rounded-2xl p-8 transition-colors duration-300"
+                  style={{
+                    borderColor: colors.border,
+                  }}
+                >
+                  <p
+                    className="font-[family-name:var(--font-body)] text-xs font-medium tracking-[0.2em] uppercase mb-6"
+                    style={{ color: colors.label }}
+                  >
+                    {group.category}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {group.items.map((item) => (
+                      <motion.span
+                        key={item.name}
+                        whileHover={{ scale: 1.05 }}
+                        className="inline-flex items-center gap-2.5 font-[family-name:var(--font-body)] text-xs border rounded-full px-3 py-2 transition-colors duration-200 cursor-default"
+                        style={{
+                          backgroundColor: `color-mix(in srgb, ${colors.bg} 15%, white 85%)`,
+                          borderColor: `color-mix(in srgb, ${colors.label} 25%, transparent 75%)`,
+                        }}
+                      >
+                        <img
+                          src={item.icon}
+                          alt={item.name}
+                          className="w-4 h-4 object-contain"
+                        />
+                        <span className="text-foreground/90">{item.name}</span>
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -882,7 +996,21 @@ export default function App() {
                       rel="noopener noreferrer"
                       whileHover={{ rotate: 45 }}
                       transition={{ duration: 0.2 }}
-                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300 mt-1"
+                      className="w-9 h-9 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 mt-1"
+                      style={{
+                        borderColor: "var(--border)",
+                        color: "var(--foreground)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = "var(--warm-accent)";
+                        e.currentTarget.style.borderColor = "var(--warm-accent)";
+                        e.currentTarget.style.color = "white";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                        e.currentTarget.style.borderColor = "var(--border)";
+                        e.currentTarget.style.color = "var(--foreground)";
+                      }}
                     >
                       <ArrowUpRight className="w-4 h-4" />
                     </motion.a>
@@ -893,14 +1021,36 @@ export default function App() {
                   </p>
 
                   <div className="flex flex-wrap items-center gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-[family-name:var(--font-body)] text-xs bg-secondary/60 rounded-full px-3 py-1"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {project.tags.map((tag) => {
+                      let tagColor = "primary";
+                      if (["React", "Vue", "Angular", "HTML5", "CSS3", "Material UI"].includes(tag)) tagColor = "cool";
+                      else if (["Node.js", "Express", "Python", "Django"].includes(tag)) tagColor = "warm";
+                      else if (["MongoDB", "PostgreSQL", "SQL"].includes(tag)) tagColor = "success";
+                      else if (["Canvas API", "REST API", "JavaScript", "TypeScript"].includes(tag)) tagColor = "warning";
+
+                      const colorMap = {
+                        cool: { bg: "var(--cool-accent-light)", text: "var(--cool-accent)" },
+                        warm: { bg: "var(--warm-accent-light)", text: "var(--warm-accent)" },
+                        success: { bg: "var(--success-light)", text: "var(--success)" },
+                        warning: { bg: "var(--warning-light)", text: "var(--warning)" },
+                        primary: { bg: "var(--primary)", text: "var(--primary)" },
+                      };
+                      const colors = colorMap[tagColor as keyof typeof colorMap];
+
+                      return (
+                        <span
+                          key={tag}
+                          className="font-[family-name:var(--font-body)] text-xs rounded-full px-3 py-1"
+                          style={{
+                            backgroundColor: `color-mix(in srgb, ${colors.bg} 20%, white 80%)`,
+                            color: colors.text,
+                            border: `1px solid color-mix(in srgb, ${colors.text} 20%, transparent 80%)`,
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      );
+                    })}
                   </div>
 
                   {/* Mobile image */}

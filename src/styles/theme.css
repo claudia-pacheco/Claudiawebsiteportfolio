@@ -27,6 +27,17 @@
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: #d4a5a5;
+
+  /* Extended color palette for colorization */
+  --warm-accent: #d4744f;
+  --warm-accent-light: #f5ede7;
+  --cool-accent: #5d8b8a;
+  --cool-accent-light: #e6f0f0;
+  --success: #4a9d6f;
+  --success-light: #e8f5f0;
+  --warning: #d4a84f;
+  --warning-light: #f8f4e6;
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -67,6 +78,17 @@
   --ring: #d4a5a5;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
+
+  /* Extended color palette for colorization (dark mode) */
+  --warm-accent: #e8965a;
+  --warm-accent-light: #3d2620;
+  --cool-accent: #7aa4a3;
+  --cool-accent-light: #1f3434;
+  --success: #5fb376;
+  --success-light: #1e3a2e;
+  --warning: #e8c870;
+  --warning-light: #3a3620;
+
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
