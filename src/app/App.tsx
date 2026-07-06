@@ -360,18 +360,7 @@ export default function App() {
             >
               Hi, I’m
               <br />
-              <em
-                style={{
-                  background: "linear-gradient(135deg, var(--primary) 0%, var(--warm-accent) 100%)",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  color: "transparent",
-                  fontStyle: "italic",
-                }}
-              >
-                Claudia
-              </em>
-              .
+              <em className="text-primary">Claudia</em>.
             </h1>
 
             <p
