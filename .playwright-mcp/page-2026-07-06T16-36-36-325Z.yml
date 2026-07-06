@@ -1,0 +1,377 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: Claudia Pacheco
+    - paragraph [ref=e7]:
+      - text: Welcome to my
+      - emphasis [ref=e8]: coding
+      - text: world
+  - navigation [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]: Claudia Pacheco
+      - generic [ref=e12]:
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: "#about"
+          - text: About
+        - link "Work" [ref=e14] [cursor=pointer]:
+          - /url: "#experience"
+          - text: Work
+        - link "Tools" [ref=e15] [cursor=pointer]:
+          - /url: "#stack"
+          - text: Tools
+        - link "Contact" [ref=e16] [cursor=pointer]:
+          - /url: "#contact"
+          - text: Contact
+        - button "Toggle dark mode" [ref=e17]:
+          - img [ref=e19]
+  - generic [ref=e23]:
+    - heading "Hi, I’m Claudia." [level=1] [ref=e24]:
+      - text: Hi, I’m
+      - emphasis [ref=e25]: Claudia
+      - text: .
+    - paragraph [ref=e26]: I build web applications.
+    - paragraph [ref=e27]: Explore this portfolio to learn more about me and some of the projects I have brought to life.
+    - generic [ref=e28]:
+      - link "View My Work" [ref=e29] [cursor=pointer]:
+        - /url: "#experience"
+      - link "Get in Touch" [ref=e30] [cursor=pointer]:
+        - /url: "#contact"
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - heading "What I Do" [level=2] [ref=e34]:
+        - text: What I
+        - emphasis [ref=e35]: Do
+      - paragraph [ref=e36]: Expertise across the full development spectrum
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - img [ref=e40]
+        - heading "Frontend Development" [level=3] [ref=e44]
+        - paragraph [ref=e45]: React, JavaScript, TypeScript, CSS
+      - generic [ref=e46]:
+        - img [ref=e48]
+        - heading "Backend & APIs" [level=3] [ref=e52]
+        - paragraph [ref=e53]: Node.js, Express, Python, Django
+      - generic [ref=e54]:
+        - img [ref=e56]
+        - heading "Databases & Cloud" [level=3] [ref=e62]
+        - paragraph [ref=e63]: PostgreSQL, MongoDB, AWS
+      - generic [ref=e64]:
+        - img [ref=e66]
+        - heading "Creative Solutions" [level=3] [ref=e68]
+        - paragraph [ref=e69]: AI Innovation & Problem Solving
+  - generic [ref=e71]:
+    - paragraph [ref=e75]: Things keeping me busy these days
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]: ✦
+        - generic [ref=e80]:
+          - generic [ref=e82]: Learning
+          - paragraph [ref=e83]: TypeScript
+          - paragraph [ref=e84]: Working through types, interfaces and generics to gradually apply it to existing and develop new projects.
+      - generic [ref=e85]:
+        - generic [ref=e86]: ◈
+        - generic [ref=e87]:
+          - generic [ref=e89]: Exploring
+          - paragraph [ref=e90]: AI-Assisted Development & Vibe Coding
+          - paragraph [ref=e91]: Exploring how AI can support the development process, from speeding up everyday tasks to experimenting with agent-based workflows and new ways of building software.
+  - generic [ref=e94]:
+    - heading "About Me" [level=2] [ref=e95]:
+      - text: About
+      - emphasis [ref=e96]: Me
+    - generic [ref=e97]:
+      - paragraph [ref=e98]: I'm a Full Stack Developer based in London. My interest in technology started when I programmed a robot at school and it’s been a constant ever since.
+      - paragraph [ref=e99]: After studying Computer Science at the University of Hertfordshire and completing the Software Engineering Immersive Bootcamp at General Assembly, I moved into the industry as a Web Developer where I've been building web applications used by thousands of people in financial services and wealth management.
+      - paragraph [ref=e100]: I’ve worked on large-scale platforms for clients across the UK and US as well as internationally collaborating with designers, product managers, business analysts and engineers to deliver features from concept through to production.
+    - generic [ref=e101]:
+      - link "GitHub" [ref=e102] [cursor=pointer]:
+        - /url: https://github.com/claudia-pacheco
+        - img [ref=e103]
+      - link "LinkedIn" [ref=e106] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/claudia-pacheco1/
+        - img [ref=e107]
+      - link "Email" [ref=e111] [cursor=pointer]:
+        - /url: mailto:claudia.pacheco.dev@gmail.com
+        - img [ref=e112]
+  - generic [ref=e116]:
+    - heading "Work Experience" [level=2] [ref=e118]:
+      - text: Work
+      - emphasis [ref=e119]: Experience
+    - generic [ref=e121]:
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - img [ref=e125]
+          - generic [ref=e128]: Current Position
+        - generic [ref=e129]:
+          - heading "Web Developer" [level=3] [ref=e130]
+          - paragraph [ref=e131]: InvestCloud Inc.
+        - list [ref=e132]:
+          - listitem [ref=e133]:
+            - generic [ref=e135]: Delivered end‑to‑end functionality by building web application features on top of an internal platform, using frontend components, configuration and backend integrations.
+          - listitem [ref=e136]:
+            - generic [ref=e138]: Reduced code duplication and improved UI maintainability by controlling navigation, permissions and validation rules through global and configuration files.
+          - listitem [ref=e139]:
+            - generic [ref=e141]: Enhanced system security by designing and implementing role‑based access and navigation, ensuring users only accessed applications appropriate to their roles.
+          - listitem [ref=e142]:
+            - generic [ref=e144]: Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments for UAT and regression testing.
+          - listitem [ref=e145]:
+            - generic [ref=e147]: Supported smooth production rollouts and hotfixes by preparing detailed deployment notes covering versions, environments and browser compatibility.
+          - listitem [ref=e148]:
+            - generic [ref=e150]: Improved debugging analysis by enhancing logging, documentation and investigation processes for production incidents.
+        - generic [ref=e151]:
+          - generic [ref=e152]: HTML
+          - generic [ref=e153]: CSS
+          - generic [ref=e154]: AWS
+          - generic [ref=e155]: Fiddler
+          - generic [ref=e156]: BrowserStack
+          - generic [ref=e157]: iOS & Android
+          - generic [ref=e158]: Company Internal Platform
+        - generic [ref=e159]:
+          - paragraph [ref=e160]: Client Projects Include
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - text: UBS
+              - generic [ref=e163]: UK
+            - generic [ref=e164]:
+              - text: HSBC
+              - generic [ref=e165]: UK
+            - generic [ref=e166]:
+              - text: Capital Group
+              - generic [ref=e167]: US
+            - generic [ref=e168]:
+              - text: Truist
+              - generic [ref=e169]: US
+      - generic [ref=e170]:
+        - generic [ref=e171]:
+          - paragraph [ref=e172]: Period
+          - paragraph [ref=e173]: June 2023 – May 2026
+        - generic [ref=e174]:
+          - paragraph [ref=e175]: Location
+          - paragraph [ref=e176]: London, UK
+        - link [ref=e177] [cursor=pointer]:
+          - /url: https://www.investcloud.com
+          - img [ref=e178]
+  - generic [ref=e183]:
+    - paragraph [ref=e185]: Education
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - generic [ref=e190]: G
+        - generic [ref=e191]:
+          - paragraph [ref=e193]: General Assembly
+          - paragraph [ref=e194]: Software Engineering Immersive Flex
+          - paragraph [ref=e195]: Intensive full-stack programme covering React, Node.js, databases and four full stack projects.
+      - generic [ref=e196]:
+        - generic [ref=e198]: U
+        - generic [ref=e199]:
+          - paragraph [ref=e201]: University of Hertfordshire
+          - paragraph [ref=e202]: CertHE in Computer Science
+          - paragraph [ref=e203]: Computer Science — fundamentals of programming, algorithms, data structures and systems design.
+  - generic [ref=e205]:
+    - generic [ref=e206]:
+      - heading "Languages & Tools" [level=2] [ref=e207]:
+        - text: Languages
+        - emphasis [ref=e208]: "& Tools"
+      - paragraph [ref=e209]: Technologies I reach for to build software
+    - generic [ref=e210]:
+      - generic [ref=e211]:
+        - paragraph [ref=e212]: Languages
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - img "JavaScript" [ref=e215]
+            - text: JavaScript
+          - generic [ref=e216]:
+            - img "TypeScript" [ref=e217]
+            - text: TypeScript
+          - generic [ref=e218]:
+            - img "Python" [ref=e219]
+            - text: Python
+          - generic [ref=e220]:
+            - img "HTML5" [ref=e221]
+            - text: HTML5
+          - generic [ref=e222]:
+            - img "CSS3" [ref=e223]
+            - text: CSS3
+          - generic [ref=e224]:
+            - img "SQL" [ref=e225]
+            - text: SQL
+      - generic [ref=e226]:
+        - paragraph [ref=e227]: Frameworks & Libraries
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - img "React" [ref=e230]
+            - text: React
+          - generic [ref=e231]:
+            - img "Node.js" [ref=e232]
+            - text: Node.js
+          - generic [ref=e233]:
+            - img "Express" [ref=e234]
+            - text: Express
+          - generic [ref=e235]:
+            - img "Django" [ref=e236]
+            - text: Django
+          - generic [ref=e237]:
+            - img "Material UI" [ref=e238]
+            - text: Material UI
+          - generic [ref=e239]:
+            - img "Tailwind CSS" [ref=e240]
+            - text: Tailwind CSS
+      - generic [ref=e241]:
+        - paragraph [ref=e242]: Databases & Cloud
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - img "PostgreSQL" [ref=e245]
+            - text: PostgreSQL
+          - generic [ref=e246]:
+            - img "MongoDB" [ref=e247]
+            - text: MongoDB
+          - generic [ref=e248]:
+            - img "AWS" [ref=e249]
+            - text: AWS
+          - generic [ref=e250]:
+            - img "Heroku" [ref=e251]
+            - text: Heroku
+      - generic [ref=e252]:
+        - paragraph [ref=e253]: Tools & Workflow
+        - generic [ref=e254]:
+          - generic [ref=e255]:
+            - img "GitHub" [ref=e256]
+            - text: GitHub
+          - generic [ref=e257]:
+            - img "VS Code" [ref=e258]
+            - text: VS Code
+          - generic [ref=e259]:
+            - img "Figma" [ref=e260]
+            - text: Figma
+          - generic [ref=e261]:
+            - img "Jira" [ref=e262]
+            - text: Jira
+          - generic [ref=e263]:
+            - img "Postman" [ref=e264]
+            - text: Postman
+          - generic [ref=e265]:
+            - img "Jest" [ref=e266]
+            - text: Jest
+          - generic [ref=e267]:
+            - img "Trello" [ref=e268]
+            - text: Trello
+          - generic [ref=e269]:
+            - img "Slack" [ref=e270]
+            - text: Slack
+          - generic [ref=e271]:
+            - img "Vite" [ref=e272]
+            - text: Vite
+      - generic [ref=e273]:
+        - paragraph [ref=e274]: Testing & Debugging
+        - generic [ref=e275]:
+          - generic [ref=e276]:
+            - img "BrowserStack" [ref=e277]
+            - text: BrowserStack
+          - generic [ref=e278]:
+            - img "Insomnia" [ref=e279]
+            - text: Insomnia
+          - generic [ref=e280]:
+            - img "Telerik Fiddler" [ref=e281]
+            - text: Telerik Fiddler
+  - generic [ref=e283]:
+    - generic [ref=e284]:
+      - heading "Bootcamp Projects" [level=2] [ref=e285]:
+        - text: Bootcamp
+        - emphasis [ref=e286]: Projects
+      - paragraph [ref=e287]: Four projects across 24 weeks — from solo games to full stack apps, each one pushing what I knew further.
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]: "01"
+            - generic [ref=e293]: Solo · Vanilla JS Game
+          - generic [ref=e294]:
+            - heading "Flying Harry Potter" [level=3] [ref=e295]
+            - link [ref=e296] [cursor=pointer]:
+              - /url: https://flying-harry-potter.netlify.app/
+              - img [ref=e297]
+          - paragraph [ref=e300]: A canvas-based browser game built with Vanilla JavaScript, HTML, and CSS. Players dodge obstacles and collect trophies to score points — my first solo project, completed in 2 weeks.
+          - generic [ref=e301]:
+            - generic [ref=e302]: JavaScript
+            - generic [ref=e303]: HTML5
+            - generic [ref=e304]: CSS3
+            - generic [ref=e305]: Canvas API
+        - generic [ref=e307]:
+          - generic [ref=e314]: flying-harry-potter.netlify.app
+          - img "Flying Harry Potter" [ref=e316]
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]: "02"
+            - generic [ref=e321]: Pair · Reactathon
+          - generic [ref=e322]:
+            - heading "Dungeons & Dragons Character Builder" [level=3] [ref=e323]
+            - link [ref=e324] [cursor=pointer]:
+              - /url: https://dungeons-n-dragons.netlify.app/
+              - img [ref=e325]
+          - paragraph [ref=e328]: A Reactathon project built in 1 week with a partner, consuming a public API to generate random D&D characters. Styled with plain CSS.
+          - generic [ref=e329]:
+            - generic [ref=e330]: React
+            - generic [ref=e331]: REST API
+            - generic [ref=e332]: CSS3
+        - generic [ref=e334]:
+          - generic [ref=e341]: dungeons-n-dragons.netlify.app
+          - img "Dungeons & Dragons Character Builder" [ref=e343]
+      - generic [ref=e344]:
+        - generic [ref=e345]:
+          - generic [ref=e346]:
+            - generic [ref=e347]: "03"
+            - generic [ref=e348]: Pair · Full Stack MERN
+          - generic [ref=e349]:
+            - heading "Walkies" [level=3] [ref=e350]
+            - link [ref=e351] [cursor=pointer]:
+              - /url: https://walkiessei22.netlify.app/
+              - img [ref=e352]
+          - paragraph [ref=e355]: A full stack MERN app built with a partner over 2 weeks, consuming its own RESTful API. React, HTML, and CSS on the frontend; MongoDB, Node.js, and Express on the backend.
+          - generic [ref=e356]:
+            - generic [ref=e357]: React
+            - generic [ref=e358]: Node.js
+            - generic [ref=e359]: Express
+            - generic [ref=e360]: MongoDB
+        - generic [ref=e362]:
+          - generic [ref=e369]: walkiessei22.netlify.app
+          - img "Walkies" [ref=e371]
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - generic [ref=e375]: "04"
+            - generic [ref=e376]: Solo · Full Stack
+          - generic [ref=e377]:
+            - heading "Cloud9 Scents" [level=3] [ref=e378]
+            - link [ref=e379] [cursor=pointer]:
+              - /url: https://cloud9-scents.netlify.app/
+              - img [ref=e380]
+          - paragraph [ref=e383]: A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and t for the frontend.
+          - generic [ref=e384]:
+            - generic [ref=e385]: React
+            - generic [ref=e386]: Python
+            - generic [ref=e387]: Django
+            - generic [ref=e388]: PostgreSQL
+            - generic [ref=e389]: Material UI
+        - generic [ref=e391]:
+          - generic [ref=e398]: cloud9-scents.netlify.app
+          - img "Cloud9 Scents" [ref=e400]
+  - generic [ref=e403]:
+    - heading "Get in Touch" [level=2] [ref=e404]:
+      - text: Get in
+      - emphasis [ref=e405]: Touch
+    - paragraph [ref=e406]:
+      - emphasis [ref=e407]: Reach out
+      - text: :) I’m always open to connecting with like-minded people and exploring new opportunities.
+    - link "Say Hello" [ref=e408] [cursor=pointer]:
+      - /url: mailto:claudia.pacheco.dev@gmail.com
+      - img [ref=e409]
+      - text: Say Hello
+  - contentinfo [ref=e412]:
+    - generic [ref=e413]:
+      - generic [ref=e414]:
+        - link "GitHub" [ref=e415] [cursor=pointer]:
+          - /url: https://github.com/claudia-pacheco
+        - generic [ref=e416]: •
+        - link "LinkedIn" [ref=e417] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/claudia-pacheco1/
+      - paragraph [ref=e418]: © 2026 Claudia Pacheco
+  - button "Back to top":
+    - img

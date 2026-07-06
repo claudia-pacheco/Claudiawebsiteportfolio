@@ -171,22 +171,22 @@ const SKILLS = [
   {
     icon: Code2,
     name: "Frontend Development",
-    desc: "React, JavaScript, TypeScript, CSS",
+    desc: "Building interactive UIs with React, TypeScript, and modern CSS. I focus on performance, accessibility, and user experience.",
   },
   {
     icon: Database,
-    name: "Backend & APIs",
-    desc: "Node.js, Express, Python, Django",
+    name: "Full Stack Architectures",
+    desc: "End-to-end systems using Node.js, Express, Python, and Django. Comfortable with both REST and internal platform APIs.",
   },
   {
     icon: Palette,
-    name: "Databases & Cloud",
-    desc: "PostgreSQL, MongoDB, AWS",
+    name: "Scalable Databases",
+    desc: "PostgreSQL for structured data, MongoDB for flexibility. Experience deploying and maintaining databases at scale on AWS.",
   },
   {
     icon: Sparkles,
-    name: "Creative Solutions",
-    desc: "AI Innovation & Problem Solving",
+    name: "Problem Solving",
+    desc: "Tackling complex architectural decisions, debugging production issues, and collaborating across teams to ship features.",
   },
 ];
 
@@ -346,8 +346,8 @@ export default function App() {
             className="space-y-8"
           >
             <h1
-              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9]"
-              style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
+              className="font-[family-name:var(--font-display)] font-light leading-[0.9]"
+              style={{ fontSize: "clamp(4rem, 10vw, 9rem)", letterSpacing: "-0.02em" }}
             >
               Hi, I’m
               <br />
@@ -355,8 +355,8 @@ export default function App() {
             </h1>
 
             <p
-              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "
-              style={{ fontSize: "clamp(3rem, 1vw, 9rem)" }}
+              className="font-[family-name:var(--font-display)] font-light leading-[0.9]"
+              style={{ fontSize: "clamp(3rem, 1vw, 9rem)", letterSpacing: "-0.02em" }}
             >
              I build web applications.
             </p>
@@ -407,28 +407,28 @@ export default function App() {
               What I <em>Do</em>
             </h2>
             <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground tracking-wide">
-              Expertise across the full development spectrum
+              From building UIs to designing databases, I work across the full stack
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SKILLS.map((skill, i) => (
               <motion.div
                 key={skill.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{ y: -6 }}
-                className="bg-card p-8 rounded-2xl border border-border hover:shadow-md transition-all group"
+                transition={{ delay: i * 0.08, duration: 0.6 }}
+                whileHover={{ y: -8 }}
+                className="bg-card p-8 rounded-2xl border border-border hover:border-primary/40 hover:shadow-md transition-all group"
               >
-                <div className="w-11 h-11 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <skill.icon className="w-5 h-5 text-primary" />
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
+                  <skill.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-xl mb-2">
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-light mb-3 leading-snug">
                   {skill.name}
                 </h3>
-                <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground">
+                <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground leading-relaxed">
                   {skill.desc}
                 </p>
               </motion.div>
@@ -437,7 +437,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Currently Working On ────────────────────────────────────── */}
+      {/* ── Currently Exploring ──────────────────────────────────────── */}
       <section className="py-16 px-6 lg:px-12 border-t border-border">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -445,59 +445,44 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row items-start md:items-center gap-3 mb-10"
+            className="mb-10"
           >
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <p className="font-[family-name:var(--font-body)] text-[0.65rem] tracking-[0.16em] uppercase text-primary">
-                Things keeping me busy these days
-              </p>
-            </div>
-            <div className="hidden md:block flex-1 h-px bg-border" />
-          </motion.div>
+            <h3 className="font-[family-name:var(--font-display)] text-3xl font-light mb-8">
+              Currently <em>Exploring</em>
+            </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              {
-                title: "TypeScript",
-                desc: "Working through types, interfaces and generics to gradually apply it to existing and develop new projects.",
-                label: "Learning",
-                icon: "✦",
-              },
-              {
-                title: "AI-Assisted Development & Vibe Coding",
-                desc: "Exploring how AI can support the development process, from speeding up everyday tasks to experimenting with agent-based workflows and new ways of building software.",
-                label: "Exploring",
-                icon: "◈",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-4 p-6 rounded-2xl border border-border hover:border-primary/30 bg-secondary/10 hover:bg-secondary/25 transition-all duration-300"
-              >
-                <span className="text-primary text-xl leading-none mt-0.5 flex-shrink-0">
-                  {item.icon}
-                </span>
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="font-[family-name:var(--font-body)] text-[0.6rem] tracking-[0.14em] uppercase text-primary/70 bg-primary/8 px-2 py-0.5 rounded-full">
-                      {item.label}
-                    </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "TypeScript",
+                  desc: "Going deeper with types, interfaces and generics. Building more robust applications by gradually expanding how I use TypeScript across projects.",
+                },
+                {
+                  title: "AI-Assisted Development",
+                  desc: "Exploring how AI tools can enhance the development process — from accelerating routine tasks to experimenting with agent-based workflows.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex items-start gap-4 p-5 rounded-2xl border border-border bg-card hover:border-primary/30 transition-colors duration-300"
+                >
+                  <div className="flex-shrink-0 w-1 h-8 bg-primary rounded-full mt-1" />
+                  <div className="flex-1">
+                    <h4 className="font-[family-name:var(--font-display)] text-lg font-light mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
-                  <p className="font-[family-name:var(--font-display)] text-lg font-light mb-2">
-                    {item.title}
-                  </p>
-                  <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -797,42 +782,43 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
             <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light mb-3">
               Languages <em>&amp; Tools</em>
             </h2>
             <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground tracking-wide">
-              Technologies I reach for to build software
+              The languages, frameworks, and platforms I've used in production
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {STACK.map((group, i) => (
               <motion.div
                 key={group.category}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-card border border-border rounded-2xl p-8"
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-colors duration-300"
               >
-                <p className="font-[family-name:var(--font-body)] text-[0.65rem] tracking-[0.16em] uppercase text-primary mb-5">
+                <p className="font-[family-name:var(--font-body)] text-xs font-medium tracking-[0.2em] uppercase text-primary mb-6">
                   {group.category}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {group.items.map((item) => (
-                    <span
+                    <motion.span
                       key={item.name}
-                      className="inline-flex items-center gap-2 font-[family-name:var(--font-body)] text-sm bg-secondary/50 border border-border rounded-full px-3.5 py-1.5 hover:border-primary/50 hover:bg-primary/5 transition-colors duration-200"
+                      whileHover={{ scale: 1.05 }}
+                      className="inline-flex items-center gap-2.5 font-[family-name:var(--font-body)] text-xs bg-secondary/60 border border-border/80 rounded-full px-3 py-2 hover:border-primary/50 hover:bg-primary/8 transition-colors duration-200 cursor-default"
                     >
                       <img
                         src={item.icon}
                         alt={item.name}
                         className="w-4 h-4 object-contain"
                       />
-                      {item.name}
-                    </span>
+                      <span className="text-foreground/90">{item.name}</span>
+                    </motion.span>
                   ))}
                 </div>
               </motion.div>
@@ -961,8 +947,7 @@ export default function App() {
             </h2>
 
             <p className="font-[family-name:var(--font-body)] text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
-              <em>Reach out</em> :) I’m always open to connecting with
-              like-minded people and exploring new opportunities.
+              Got an interesting project or just want to chat about tech? I’d love to hear from you. Whether it’s a collaboration, a question, or just saying hello.
             </p>
 
             <motion.a
