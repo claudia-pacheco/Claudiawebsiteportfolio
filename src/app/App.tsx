@@ -1082,7 +1082,7 @@ export default function App() {
       </section>
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
-      <section id="contact" className="py-32 px-6 lg:px-12">
+      <section id="contact" className="py-32 px-6 lg:px-12" style={{ backgroundColor: "color-mix(in srgb, var(--primary) 3%, transparent)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
