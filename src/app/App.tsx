@@ -240,6 +240,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
+      <style>{`
+        @media (min-width: 640px) {
+          .hero-text-desktop {
+            font-size: clamp(3rem, 1vw, 9rem) !important;
+          }
+        }
+      `}</style>
       {/* ── Loading screen ──────────────────────────────────────────── */}
       <motion.div
         initial={{ opacity: 1 }}
@@ -370,7 +377,7 @@ export default function App() {
               .
             </h1>
             <p
-              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] whitespace-nowrap sm:whitespace-normal"
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] whitespace-nowrap sm:whitespace-normal hero-text-desktop"
               style={{
                 fontSize: "clamp(2.3rem, 5vw, 9rem)",
               }}
@@ -1065,9 +1072,6 @@ export default function App() {
                 {/* Left — text */}
                 <div>
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/50 tracking-widest">
-                      {project.id}
-                    </span>
                     <span className="hidden md:inline font-[family-name:var(--font-body)] text-xs text-muted-foreground border border-border rounded-full px-3 py-1">
                       {project.category}
                     </span>
