@@ -10,7 +10,7 @@
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
-  --primary: #d9a8b3;
+  --primary: #e8c5d0;
   --primary-foreground: #ffffff;
   --secondary: #f0f0f0;
   --secondary-foreground: #1a1a1a;
@@ -37,6 +37,10 @@
   --success-light: #e8f5f0;
   --warning: #d4a84f;
   --warning-light: #f8f4e6;
+
+  /* Bright secondary - Option 1 harmonization */
+  --secondary-bright: #f08bb3;
+  --secondary-bright-light: #fef4f9;
 
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -88,6 +92,10 @@
   --success-light: #1e3a2e;
   --warning: #e8c870;
   --warning-light: #3a3620;
+
+  /* Bright secondary dark mode - Option 1 harmonization */
+  --secondary-bright: #f5a8c4;
+  --secondary-bright-light: #2a1a1f;
 
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);

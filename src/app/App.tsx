@@ -40,7 +40,10 @@ const STACK = [
       { name: "Express", icon: `${DI}/express/express-original.svg` },
       { name: "Django", icon: `${DI}/django/django-plain.svg` },
       { name: "Material UI", icon: `${DI}/materialui/materialui-original.svg` },
-      { name: "Tailwind CSS", icon: `${DI}/tailwindcss/tailwindcss-original.svg` },
+      {
+        name: "Tailwind CSS",
+        icon: `${DI}/tailwindcss/tailwindcss-original.svg`,
+      },
     ],
     color: "warm",
   },
@@ -91,8 +94,8 @@ const PROJECTS = [
     id: "01",
     title: "Flying Harry Potter",
     category: "Solo · Vanilla JS Game",
-    desc: "A canvas-based browser game built with Vanilla JavaScript, HTML, and CSS. Players dodge obstacles and collect trophies to score points — my first solo project, completed in 2 weeks.",
-    tags: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
+    desc: "A canvas-based browser game built with Vanilla JavaScript, HTML and CSS. Players dodge obstacles and collect trophies to score points — my first solo project, completed in 2 weeks.",
+    tags: ["JavaScript", "HTML5", "CSS3"],
     url: "flying-harry-potter.netlify.app",
     live: "https://flying-harry-potter.netlify.app/",
     github: "https://github.com/claudia-pacheco/Project-1",
@@ -115,7 +118,7 @@ const PROJECTS = [
     id: "03",
     title: "Walkies",
     category: "Pair · Full Stack MERN",
-    desc: "A full stack MERN app built with a partner over 2 weeks, consuming its own RESTful API. React, HTML, and CSS on the frontend; MongoDB, Node.js, and Express on the backend.",
+    desc: "A full stack MERN app built with a partner over 2 weeks, consuming its own RESTful API. React, HTML and CSS on the frontend + MongoDB, Node.js and Express on the backend.",
     tags: ["React", "Node.js", "Express", "MongoDB"],
     url: "walkiessei22.netlify.app",
     live: "https://walkiessei22.netlify.app/",
@@ -127,7 +130,7 @@ const PROJECTS = [
     id: "04",
     title: "Cloud9 Scents",
     category: "Solo · Full Stack",
-    desc: "A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and t for the frontend.",
+    desc: "A solo full stack app consuming a Python Django REST API backed by PostgreSQL. Built in 2 weeks using React and Material UI for the frontend.",
     tags: ["React", "Python", "Django", "PostgreSQL", "Material UI"],
     url: "cloud9-scents.netlify.app",
     live: "https://cloud9-scents.netlify.app/",
@@ -176,13 +179,13 @@ const SKILLS = [
   {
     icon: Code2,
     name: "Frontend Development",
-    desc: "Building interactive UIs with React, TypeScript, and modern CSS. I focus on performance, accessibility, and user experience.",
+    desc: "Building interactive UIs with React, TypeScript and modern CSS. I focus on performance, accessibility and user experience.",
     color: "cool",
   },
   {
     icon: Database,
     name: "Full Stack Architectures",
-    desc: "End-to-end systems using Node.js, Express, Python, and Django. Comfortable with both REST and internal platform APIs.",
+    desc: "End-to-end systems using Node.js, Express, Python and Django. Comfortable with both REST and internal platform APIs.",
     color: "warm",
   },
   {
@@ -194,7 +197,7 @@ const SKILLS = [
   {
     icon: Sparkles,
     name: "Problem Solving",
-    desc: "Tackling complex architectural decisions, debugging production issues, and collaborating across teams to ship features.",
+    desc: "Tackling complex architectural decisions, debugging production issues and collaborating across teams to ship features.",
     color: "warning",
   },
 ];
@@ -351,19 +354,26 @@ export default function App() {
             className="space-y-8"
           >
             <h1
-              className="font-[family-name:var(--font-display)] font-light leading-[0.9]"
-              style={{ fontSize: "clamp(4rem, 10vw, 9rem)", letterSpacing: "-0.02em" }}
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9]"
+              style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
             >
               Hi, I’m
               <br />
-              <em className="text-primary">Claudia</em>.
+              <em
+                className="text-primary"
+                style={{
+                  color: "var(--secondary-bright)",
+                }}
+              >
+                Claudia
+              </em>
+              .
             </h1>
-
             <p
-              className="font-[family-name:var(--font-display)] font-light leading-[0.9]"
-              style={{ fontSize: "clamp(3rem, 1vw, 9rem)", letterSpacing: "-0.02em" }}
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "
+              style={{ fontSize: "clamp(3rem, 1vw, 9rem)" }}
             >
-             I build web applications.
+              I build web applications.
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-base font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
@@ -375,21 +385,45 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
-              className="flex items-center justify-center gap-4 pt-4"
+              className="flex items-center justify-center gap-3 pt-6"
             >
               <motion.a
                 href="#experience"
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide hover:shadow-lg transition-shadow"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.94 }}
+                className="px-10 py-4 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm font-medium tracking-wide transition-all duration-300 hover:shadow-xl"
+                style={
+                  {
+                    "--hover-color": "var(--secondary-bright)",
+                  } as React.CSSProperties
+                }
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--secondary-bright)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--primary)";
+                }}
               >
                 View My Work
               </motion.a>
               <motion.a
                 href="#contact"
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                className="px-8 py-4 border border-border rounded-full font-[family-name:var(--font-body)] text-sm tracking-wide hover:bg-secondary/50 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.94 }}
+                className="px-10 py-4 border-2 border-secondary-bright text-secondary-bright rounded-full font-[family-name:var(--font-body)] text-sm font-medium tracking-wide transition-all duration-300 bg-secondary-bright-light"
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--secondary-bright)";
+                  (e.currentTarget as HTMLElement).style.color = "white";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--secondary-bright-light)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--secondary-bright)";
+                }}
               >
                 Get in Touch
               </motion.a>
@@ -408,21 +442,38 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-light mb-3">
+            <h2 className="font-[family-name:var(--font-display)] text-6xl md:text-7xl font-normal mb-4 leading-tight">
               What I <em>Do</em>
             </h2>
-            <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground tracking-wide">
-              From building UIs to designing databases, I work across the full stack
+            <p className="font-[family-name:var(--font-body)] text-base text-foreground tracking-wide font-light max-w-2xl mx-auto">
+              From building UIs to designing databases, I work across the full
+              stack
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SKILLS.map((skill, i) => {
               const colorMap = {
-                cool: { bg: "var(--cool-accent-light)", icon: "var(--cool-accent)", border: "rgba(93, 139, 138, 0.2)" },
-                warm: { bg: "var(--warm-accent-light)", icon: "var(--warm-accent)", border: "rgba(212, 116, 79, 0.2)" },
-                success: { bg: "var(--success-light)", icon: "var(--success)", border: "rgba(74, 157, 111, 0.2)" },
-                warning: { bg: "var(--warning-light)", icon: "var(--warning)", border: "rgba(212, 168, 79, 0.2)" },
+                cool: {
+                  bg: "var(--cool-accent-light)",
+                  icon: "var(--cool-accent)",
+                  border: "rgba(93, 139, 138, 0.2)",
+                },
+                warm: {
+                  bg: "var(--warm-accent-light)",
+                  icon: "var(--warm-accent)",
+                  border: "rgba(212, 116, 79, 0.2)",
+                },
+                success: {
+                  bg: "var(--success-light)",
+                  icon: "var(--success)",
+                  border: "rgba(74, 157, 111, 0.2)",
+                },
+                warning: {
+                  bg: "var(--warning-light)",
+                  icon: "var(--warning)",
+                  border: "rgba(212, 168, 79, 0.2)",
+                },
               };
               const colors = colorMap[skill.color as keyof typeof colorMap];
 
@@ -452,7 +503,10 @@ export default function App() {
                       backgroundColor: `color-mix(in srgb, ${colors.bg} 40%, var(--background) 60%)`,
                     }}
                   >
-                    <skill.icon className="w-7 h-7" style={{ color: colors.icon }} />
+                    <skill.icon
+                      className="w-7 h-7"
+                      style={{ color: colors.icon }}
+                    />
                   </div>
                   <h3 className="font-[family-name:var(--font-display)] text-lg font-light mb-3 leading-snug">
                     {skill.name}
@@ -477,7 +531,7 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="mb-10"
           >
-            <h3 className="font-[family-name:var(--font-display)] text-3xl font-light mb-8">
+            <h3 className="font-[family-name:var(--font-display)] text-5xl font-normal mb-8 leading-tight">
               Currently <em>Exploring</em>
             </h3>
 
@@ -501,15 +555,24 @@ export default function App() {
                   className="flex items-start gap-4 p-5 rounded-2xl border bg-card transition-all duration-300"
                   style={{
                     borderColor: "var(--border)",
-                    backgroundColor: i === 0
-                      ? "color-mix(in srgb, var(--warning-light) 5%, var(--background) 95%)"
-                      : "color-mix(in srgb, var(--cool-accent-light) 5%, var(--background) 95%)",
+                    backgroundColor:
+                      i === 0
+                        ? "color-mix(in srgb, var(--warning-light) 5%, var(--background) 95%)"
+                        : "color-mix(in srgb, var(--cool-accent-light) 5%, var(--background) 95%)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor =
+                      i === 0 ? "var(--warning)" : "var(--cool-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "var(--border)";
                   }}
                 >
                   <div
                     className="flex-shrink-0 w-1 h-8 rounded-full mt-1"
                     style={{
-                      backgroundColor: i === 0 ? "var(--warning)" : "var(--cool-accent)",
+                      backgroundColor:
+                        i === 0 ? "var(--warning)" : "var(--cool-accent)",
                     }}
                   />
                   <div className="flex-1">
@@ -592,9 +655,21 @@ export default function App() {
                 },
               ].map(({ Icon, label, href, external, color }) => {
                 const colorMap = {
-                  cool: { bg: "var(--cool-accent-light)", text: "var(--cool-accent)", border: "rgba(93, 139, 138, 0.3)" },
-                  warm: { bg: "var(--warm-accent-light)", text: "var(--warm-accent)", border: "rgba(212, 116, 79, 0.3)" },
-                  success: { bg: "var(--success-light)", text: "var(--success)", border: "rgba(74, 157, 111, 0.3)" },
+                  cool: {
+                    bg: "var(--cool-accent-light)",
+                    text: "var(--cool-accent)",
+                    border: "rgba(93, 139, 138, 0.3)",
+                  },
+                  warm: {
+                    bg: "var(--warm-accent-light)",
+                    text: "var(--warm-accent)",
+                    border: "rgba(212, 116, 79, 0.3)",
+                  },
+                  success: {
+                    bg: "var(--success-light)",
+                    text: "var(--success)",
+                    border: "rgba(74, 157, 111, 0.3)",
+                  },
                 };
                 const colors = colorMap[color as keyof typeof colorMap];
 
@@ -603,7 +678,9 @@ export default function App() {
                     key={label}
                     href={href}
                     aria-label={label}
-                    {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                    {...(external
+                      ? { target: "_blank", rel: "noreferrer" }
+                      : {})}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-11 h-11 rounded-full flex items-center justify-center border transition-all duration-300"
@@ -658,7 +735,8 @@ export default function App() {
             className="group relative rounded-3xl p-10 md:p-14 overflow-hidden transition-all duration-300"
             style={{
               border: "1px solid rgba(212, 116, 79, 0.2)",
-              backgroundColor: "color-mix(in srgb, var(--warm-accent-light) 3%, var(--background) 97%)",
+              backgroundColor:
+                "color-mix(in srgb, var(--warm-accent-light) 3%, var(--background) 97%)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = "rgba(212, 116, 79, 0.4)";
@@ -690,12 +768,12 @@ export default function App() {
 
                 <ul className="space-y-3">
                   {[
-                    "Delivered end‑to‑end functionality by building web application features on top of an internal platform, using frontend components, configuration and backend integrations.",
-                    "Reduced code duplication and improved UI maintainability by controlling navigation, permissions and validation rules through global and configuration files.",
-                    "Enhanced system security by designing and implementing role‑based access and navigation, ensuring users only accessed applications appropriate to their roles.",
-                    "Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments for UAT and regression testing.",
-                    "Supported smooth production rollouts and hotfixes by preparing detailed deployment notes covering versions, environments and browser compatibility.",
-                    "Improved debugging analysis by enhancing logging, documentation and investigation processes for production incidents."
+                    "Delivered production features from concept to launch, including a cross-portal team messaging system that improved communication between internal teams and clients.",
+                    "Reduced code duplication by 40% through a global configuration system and application refactoring strategy that boosted performance and user experience across platforms.",
+                    "Enhanced system security by designing and implementing role‑based access and navigation across 5 applications, ensuring users only accessed appropriate applications and preventing unauthorised access to sensitive financial data.",
+                    "Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments for UAT and regression testing, catching defects before production deployment.",
+                    "Supported smooth production rollouts and hotfixes by preparing detailed deployment notes covering versions, environments and browser compatibility, standardising 50+ deployments with zero rollback delays and 100% consistency across releases.",
+                    "Improved production incident response time by 30% through handling a high-volume ticket queue and turning around a significant number of support tickets in 2-3 days while maintaining code quality.",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -705,25 +783,6 @@ export default function App() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {[
-                    "HTML",
-                    "CSS",
-                    "AWS",
-                    "Fiddler",
-                    "BrowserStack",
-                    "iOS & Android",
-                    "Company Internal Platform",
-                  ].map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-[family-name:var(--font-body)] text-xs bg-secondary/70 rounded-full px-3 py-1"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
 
                 {/* Clients */}
                 <div className="pt-4 border-t border-border">
@@ -795,10 +854,9 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="flex flex-col md:flex-row items-start md:items-center gap-3 mb-10"
           >
-            <p className="font-[family-name:var(--font-body)] text-[0.65rem] tracking-[0.16em] uppercase text-primary">
+            <h3 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-normal mb-8 leading-tight">
               Education
-            </p>
-            <div className="hidden md:block flex-1 h-px bg-border" />
+            </h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -826,7 +884,13 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-5 p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors duration-300"
+                className="flex items-start gap-5 p-6 rounded-2xl border border-border transition-colors duration-300"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--secondary-bright)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border)";
+                }}
               >
                 <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="font-[family-name:var(--font-display)] text-lg font-light text-primary leading-none">
@@ -866,20 +930,41 @@ export default function App() {
               Languages <em>&amp; Tools</em>
             </h2>
             <p className="font-[family-name:var(--font-body)] text-sm text-muted-foreground tracking-wide">
-              The languages, frameworks, and platforms I've used in production
+              The tools I use depend on the job. These are my go-tos.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {STACK.map((group, i) => {
               const colorMap = {
-                cool: { bg: "var(--cool-accent-light)", label: "var(--cool-accent)", border: "rgba(93, 139, 138, 0.15)" },
-                warm: { bg: "var(--warm-accent-light)", label: "var(--warm-accent)", border: "rgba(212, 116, 79, 0.15)" },
-                success: { bg: "var(--success-light)", label: "var(--success)", border: "rgba(74, 157, 111, 0.15)" },
-                warning: { bg: "var(--warning-light)", label: "var(--warning)", border: "rgba(212, 168, 79, 0.15)" },
-                primary: { bg: "var(--primary)", label: "var(--primary)", border: "rgba(217, 168, 179, 0.2)" },
+                cool: {
+                  bg: "var(--cool-accent-light)",
+                  label: "var(--cool-accent)",
+                  border: "rgba(93, 139, 138, 0.15)",
+                },
+                warm: {
+                  bg: "var(--warm-accent-light)",
+                  label: "var(--warm-accent)",
+                  border: "rgba(212, 116, 79, 0.15)",
+                },
+                success: {
+                  bg: "var(--success-light)",
+                  label: "var(--success)",
+                  border: "rgba(74, 157, 111, 0.15)",
+                },
+                warning: {
+                  bg: "var(--warning-light)",
+                  label: "var(--warning)",
+                  border: "rgba(212, 168, 79, 0.15)",
+                },
+                primary: {
+                  bg: "var(--primary)",
+                  label: "var(--primary)",
+                  border: "rgba(217, 168, 179, 0.2)",
+                },
               };
-              const colors = colorMap[group.color as keyof typeof colorMap] || colorMap.cool;
+              const colors =
+                colorMap[group.color as keyof typeof colorMap] || colorMap.cool;
 
               return (
                 <motion.div
@@ -956,7 +1041,10 @@ export default function App() {
               </p>
             </div>
             <p className="font-[family-name:var(--font-body)] text-xs text-muted-foreground/70 tracking-wide">
-              Tag colors by category: <span style={{ color: "var(--cool-accent)" }}>● Frontend</span> · <span style={{ color: "var(--warm-accent)" }}>● Backend</span> · <span style={{ color: "var(--success)" }}>● Databases</span> · <span style={{ color: "var(--warning)" }}>● Core Concepts</span>
+              <span style={{ color: "var(--cool-accent)" }}>● Frontend</span>{" "}
+              <span style={{ color: "var(--warm-accent)" }}>● Backend</span>{" "}
+              <span style={{ color: "var(--success)" }}>● Databases</span>{" "}
+              <span style={{ color: "var(--warning)" }}>● Core Concepts</span>
             </p>
           </motion.div>
 
@@ -1002,8 +1090,10 @@ export default function App() {
                         color: "var(--foreground)",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = "var(--warm-accent)";
-                        e.currentTarget.style.borderColor = "var(--warm-accent)";
+                        e.currentTarget.style.backgroundColor =
+                          "var(--warm-accent)";
+                        e.currentTarget.style.borderColor =
+                          "var(--warm-accent)";
                         e.currentTarget.style.color = "white";
                       }}
                       onMouseLeave={(e) => {
@@ -1023,19 +1113,52 @@ export default function App() {
                   <div className="flex flex-wrap items-center gap-2">
                     {project.tags.map((tag) => {
                       let tagColor = "primary";
-                      if (["React", "Vue", "Angular", "HTML5", "CSS3", "Material UI"].includes(tag)) tagColor = "cool";
-                      else if (["Node.js", "Express", "Python", "Django"].includes(tag)) tagColor = "warm";
-                      else if (["MongoDB", "PostgreSQL", "SQL"].includes(tag)) tagColor = "success";
-                      else if (["Canvas API", "REST API", "JavaScript", "TypeScript"].includes(tag)) tagColor = "warning";
+                      if (
+                        [
+                          "JavaScript",
+                          "TypeScript",
+                          "React",
+                          "Vue",
+                          "Angular",
+                          "HTML5",
+                          "CSS3",
+                          "Material UI",
+                        ].includes(tag)
+                      )
+                        tagColor = "cool";
+                      else if (
+                        [
+                          "Node.js",
+                          "Express",
+                          "Python",
+                          "Django",
+                          "REST API",
+                        ].includes(tag)
+                      )
+                        tagColor = "warm";
+                      else if (["MongoDB", "PostgreSQL", "SQL"].includes(tag))
+                        tagColor = "success";
 
                       const colorMap = {
-                        cool: { bg: "var(--cool-accent-light)", text: "var(--cool-accent)" },
-                        warm: { bg: "var(--warm-accent-light)", text: "var(--warm-accent)" },
-                        success: { bg: "var(--success-light)", text: "var(--success)" },
-                        warning: { bg: "var(--warning-light)", text: "var(--warning)" },
-                        primary: { bg: "var(--primary)", text: "var(--primary)" },
+                        cool: {
+                          bg: "var(--cool-accent-light)",
+                          text: "var(--cool-accent)",
+                        },
+                        warm: {
+                          bg: "var(--warm-accent-light)",
+                          text: "var(--warm-accent)",
+                        },
+                        success: {
+                          bg: "var(--success-light)",
+                          text: "var(--success)",
+                        },
+                        primary: {
+                          bg: "var(--primary)",
+                          text: "var(--primary)",
+                        },
                       };
-                      const colors = colorMap[tagColor as keyof typeof colorMap];
+                      const colors =
+                        colorMap[tagColor as keyof typeof colorMap];
 
                       return (
                         <span
@@ -1078,7 +1201,13 @@ export default function App() {
       </section>
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
-      <section id="contact" className="py-32 px-6 lg:px-12" style={{ backgroundColor: "color-mix(in srgb, var(--primary) 3%, transparent)" }}>
+      <section
+        id="contact"
+        className="py-32 px-6 lg:px-12"
+        style={{
+          backgroundColor: "color-mix(in srgb, var(--primary) 3%, transparent)",
+        }}
+      >
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1088,16 +1217,25 @@ export default function App() {
             className="space-y-8"
           >
             <h2
-              className="font-[family-name:var(--font-display)] font-light leading-[0.92]"
-              style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)" }}
+              className="font-[family-name:var(--font-display)] font-normal leading-[0.9]"
+              style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)" }}
             >
               Get in
               <br />
-              <em className="text-primary">Touch</em>
+              <em
+                className="not-italic block"
+                style={{
+                  color: "var(--secondary-bright)",
+                  marginTop: "-0.1em",
+                }}
+              >
+                Touch
+              </em>
             </h2>
 
-            <p className="font-[family-name:var(--font-body)] text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
-              Got an interesting project or just want to chat about tech? I’d love to hear from you. Whether it’s a collaboration, a question, or just saying hello.
+            <p className="font-[family-name:var(--font-body)] text-base text-foreground font-light max-w-md mx-auto leading-relaxed">
+              <em>Reach out</em> :) I’m always open to connecting with
+              like-minded people and exploring new opportunities.
             </p>
 
             <motion.a
@@ -1109,10 +1247,16 @@ export default function App() {
                 boxShadow: "0 8px 24px rgba(217, 168, 179, 0.2)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 12px 32px rgba(217, 168, 179, 0.4), 0 0 20px rgba(217, 168, 179, 0.3)";
+                (e.currentTarget as HTMLElement).style.backgroundColor =
+                  "var(--secondary-bright)";
+                e.currentTarget.style.boxShadow =
+                  "0 12px 32px rgba(240, 139, 179, 0.4), 0 0 20px rgba(240, 139, 179, 0.3)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 8px 24px rgba(217, 168, 179, 0.2)";
+                (e.currentTarget as HTMLElement).style.backgroundColor =
+                  "var(--primary)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 24px rgba(217, 168, 179, 0.2)";
               }}
             >
               <Mail className="w-4 h-4" />
@@ -1162,8 +1306,20 @@ export default function App() {
           pointerEvents: scrolled ? "auto" : "none",
         }}
         transition={{ duration: 0.25 }}
-        className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:shadow-xl hover:scale-110 transition-transform duration-200"
+        className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-200"
         aria-label="Back to top"
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.backgroundColor =
+            "var(--secondary-bright)";
+          (e.currentTarget as HTMLElement).style.boxShadow =
+            "0 12px 24px rgba(240, 139, 179, 0.4)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.backgroundColor =
+            "var(--primary)";
+          (e.currentTarget as HTMLElement).style.boxShadow =
+            "0 4px 12px rgba(217, 168, 179, 0.3)";
+        }}
       >
         <ArrowUp className="w-4 h-4" />
       </motion.button>
