@@ -370,8 +370,10 @@ export default function App() {
               .
             </h1>
             <p
-              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] "
-              style={{ fontSize: "clamp(3rem, 1vw, 9rem)" }}
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] whitespace-nowrap sm:whitespace-normal"
+              style={{
+                fontSize: "clamp(2.3rem, 5vw, 9rem)",
+              }}
             >
               I build web applications.
             </p>
@@ -391,7 +393,7 @@ export default function App() {
                 href="#experience"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.94 }}
-                className="px-10 py-4 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm font-medium tracking-wide transition-all duration-300 hover:shadow-xl"
+                className="px-10 py-4 bg-primary text-primary-foreground rounded-full font-[family-name:var(--font-body)] text-sm font-medium tracking-wide transition-all duration-300 hover:shadow-xl whitespace-nowrap sm:whitespace-normal"
                 style={
                   {
                     "--hover-color": "var(--secondary-bright)",
@@ -412,7 +414,7 @@ export default function App() {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.94 }}
-                className="px-10 py-4 border-2 border-secondary-bright text-secondary-bright rounded-full font-[family-name:var(--font-body)] text-sm font-medium tracking-wide transition-all duration-300 bg-secondary-bright-light"
+                className="px-10 py-4 border-2 border-secondary-bright text-secondary-bright rounded-full font-[family-name:var(--font-body)] text-sm font-medium tracking-wide transition-all duration-300 bg-secondary-bright-light whitespace-nowrap sm:whitespace-normal"
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.backgroundColor =
                     "var(--secondary-bright)";
@@ -793,8 +795,9 @@ export default function App() {
                     {[
                       { name: "UBS", region: "UK" },
                       { name: "HSBC", region: "UK" },
-                      { name: "Capital Group", region: "US" },
                       { name: "Truist", region: "US" },
+                      { name: "Capital Group", region: "US" }
+                      
                     ].map((client) => (
                       <span
                         key={client.name}
@@ -1044,7 +1047,6 @@ export default function App() {
               <span style={{ color: "var(--cool-accent)" }}>● Frontend</span>{" "}
               <span style={{ color: "var(--warm-accent)" }}>● Backend</span>{" "}
               <span style={{ color: "var(--success)" }}>● Databases</span>{" "}
-              <span style={{ color: "var(--warning)" }}>● Core Concepts</span>
             </p>
           </motion.div>
 
