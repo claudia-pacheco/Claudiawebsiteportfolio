@@ -1236,10 +1236,8 @@ export default function App() {
                 <ul className="space-y-3">
                   {[
                     "Delivered production features from concept to launch, including a cross-portal team messaging system that improved communication between internal teams and clients.",
-                    "Reduced code duplication by 40% through a global configuration system and application refactoring strategy that boosted performance and user experience across platforms.",
                     "Enhanced system security by designing and implementing role‑based access and navigation across 5 applications, ensuring users only accessed appropriate applications and preventing unauthorised access to sensitive financial data.",
                     "Stabilised product releases by partnering with QA and product teams to define acceptance criteria and maintain test environments for UAT and regression testing, catching defects before production deployment.",
-                    "Supported smooth production rollouts and hotfixes by preparing detailed deployment notes covering versions, environments and browser compatibility, standardising 50+ deployments with zero rollback delays and 100% consistency across releases.",
                     "Improved production incident response time by 30% through handling a high-volume ticket queue and turning around a significant number of support tickets in 2-3 days while maintaining code quality.",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-3">
