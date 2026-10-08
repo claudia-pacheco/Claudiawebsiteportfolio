@@ -696,28 +696,22 @@ export default function App() {
             className="space-y-8"
           >
             <h1
-              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9]"
-              style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
-            >
-              Hi, I’m
-              <br />
-              <em
-                className="text-primary"
-                style={{
-                  color: "var(--secondary-bright)",
-                }}
-              >
-                Claudia
-              </em>
-              .
-            </h1>
-            <p
-              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] whitespace-nowrap sm:whitespace-normal hero-text-desktop"
+              className="leading-[1.2]"
               style={{
-                fontSize: "clamp(2.3rem, 5vw, 9rem)",
+                fontFamily: "'Press Start 2P', monospace",
+                fontSize: "clamp(1.35rem, 5vw, 4.25rem)",
+                color: "var(--secondary-bright)",
               }}
             >
-              I build web applications.
+              Hello World 👾
+            </h1>
+            <p
+              className="font-[family-name:var(--font-display)] font-light tracking-tight leading-[0.9] hero-text-desktop"
+              style={{
+                fontSize: "clamp(1.75rem, 3.75vw, 3.25rem)",
+              }}
+            >
+              I’m Claudia, I build web applications.
             </p>
 
             <p className="font-[family-name:var(--font-body)] text-base font-light text-muted-foreground max-w-xl mx-auto leading-relaxed">
